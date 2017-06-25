@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="css/index.css" rel="stylesheet" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+	$(".new_help").hover(function(){
+		$(".nh").addClass("new_help_title_").removeClass("new_help_title");
+		$(".help_list").show();
+	},function(){
+		$(".nh").removeClass("new_help_title_").addClass("new_help_title");
+		$(".help_list").hide();
+	})	
+	$("#line_hover,.line_ditie").hover(function(){
+		$(".line_ditie").show();	
+	},function(){
+		$(".line_ditie").hide();	
+	})
+})
+</script>
+<title>优惠GO</title>
+</head>
+
+<body>
+<div class="top">
+	<div class="top_main">
+    	<div class="top_left">美丽，从头开始！<a href="login.html">请登录</a><a href="register.html">免费注册</a></div>
+    	<div class="top_right">
+            <div class="new_help">
+            	<p class="new_help_title nh">新手帮助</p>
+                <div class="help_list">
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">关注微信号</a></p>
+                    <p><a href="#">关注新浪微博</a></p>
+                </div>
+            </div>
+            <div class="top_member_center">
+            	<a href="#">会员中心</a>
+                <a href="#">我的收藏</a>
+                <a href="#">我的订单</a>
+                <a href="#">积分兑换</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top_second">
+	<div class="header_logo"><a href="/"><img src="images/logo.png" /></a></div>
+    <div class="search_header">
+    	<p class="search_header_h"><form action="" method="post"><input type="text" value="" class="search_header_input" /><input type="submit" value="搜索" class="search_header_submit"/></form></p>
+        <p class="search_header_c"><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a></p>
+    </div>
+    <div class="pingtai_icon">
+    	<a class="icon_1" href="#">超低折扣</a>
+        <a class="icon_2" href="#">无忧售后</a>
+        <a class="icon_3" href="#">服务保障</a>
+    </div>
+</div>
+
+<div class="top_nav">
+	<div class="top_nav_main">
+    	<a href="index.html" class="no_hover">嗨！</a>
+        <a href="find.html" class="no_hover">寻找美丽</a>
+        <a href="youhuigo.html" class="nav_hover">优惠GO</a>
+        <a href="liren.html" class="no_hover">丽人</a>
+        <a href="xianshi.html" class="no_hover">限时GO</a>
+        <a href="#" class="no_hover">时尚汇</a>
+   		<a href="#" class="no_hover">臭美</a>
+    </div>
+</div>
+
+<div class="youhui_main">
+	<div class="ads_style"><a href="#"><img src="images/55badf0052c1b143.jpg" width="1200" height="100" /></a></div>
+	<div class="select_search">
+    	<div class="select_option">
+        	<p class="select_title">服务项目：</p>
+            <div class="options">
+            	<a href="#" class="options_hover">全部</a>
+                <a href="#" class="options_no_hover">美容</a>
+                <a href="#" class="options_no_hover">美发</a>
+                <a href="#" class="options_no_hover">美甲</a>
+                <a href="#" class="options_no_hover">化妆</a>
+            </div>
+        </div>
+        <div class="select_option">
+        	<div class="line_ditie">
+            	<p class="line_ditie_title" id="line_ditie_title"></p>
+                <div class="line_ditie_c">
+                	<a href="#">不限</a>
+                    <a href="#">磁悬浮</a>
+                    <a href="#">1号线</a>
+                    <a href="#">2号线</a>
+                    <a href="#">3号线</a>
+                    <a href="#">4号线</a>
+                    <a href="#">5号线</a>
+                    <a href="#">6号线</a>
+                    <a href="#">7号线</a>
+                    <a href="#">8号线</a>
+                    <a href="#">9号线</a>
+                    <a href="#">10号线</a>
+                    <a href="#">11号线</a>
+                    <a href="#">11号线支线</a>
+                    <a href="#">12号线</a>
+                    <a href="#">13号线</a>
+                    <a href="#">16号线</a>
+                </div>
+            </div>
+            <div class="blank"></div>
+        	<p class="select_title">所属区域：</p>
+            <div class="options">
+            	<a href="#" class="options_no_hover">全部</a>
+                <a class="options_hover" id="line_hover">地铁附近</a>
+                <a href="#" class="options_no_hover">黄浦区</a>
+                <a href="#" class="options_no_hover">卢湾区</a>
+                <a href="#" class="options_no_hover">静安区</a>
+                <a href="#" class="options_no_hover">徐汇区</a>
+                <a href="#" class="options_no_hover">浦东新区</a>
+                <a href="#" class="options_no_hover">长宁区</a>
+                <a href="#" class="options_no_hover">虹口区</a>
+                <a href="#" class="options_no_hover">杨浦区</a>
+                <a href="#" class="options_no_hover">普陀区</a>
+                <a href="#" class="options_no_hover">闸北区</a>
+                <a href="#" class="options_no_hover">闵行区</a>
+                <a href="#" class="options_no_hover">宝山区</a>
+                <a href="#" class="options_no_hover">嘉定区</a>
+                <a href="#" class="options_no_hover">青浦区</a>
+                <a href="#" class="options_no_hover">奉贤区</a>
+                <a href="#" class="options_no_hover">南汇区</a>
+                <a href="#" class="options_no_hover">崇明区</a>
+                <a href="#" class="options_no_hover">金山区</a>
+                <a href="#" class="options_no_hover">松江区</a>
+                <a href="#" class="options_no_hover">上海周边</a>
+                
+            </div>            
+        </div>
+        <div class="select_option" id="noborder">
+        	<p class="select_title">2号线：</p>
+            <div class="options">
+            	<a href="#" class="options_hover">全部</a>
+                <a href="#" class="options_no_hover">浦东机场</a>
+                <a href="#" class="options_no_hover">徐京东</a>
+                <a href="#" class="options_no_hover">光缆路</a>
+                <a href="#" class="options_no_hover">川沙</a>
+            </div>
+        </div>
+    </div>
+    <div class="sort_tc">
+    	<p class="sort_style_hover"><a href="#">销量<img src="images/sort_desc.png" /></a></p>
+        <p class="sort_style"><a href="#">销量<img src="images/sort_asc.png" /></a></p>
+        <p class="sort_style"><a href="#">销量<img src="images/sort_asc.png" /></a></p>
+        <p class="shaixuan_cb"><input type="checkbox" /><label for="">筛选条件</label></p>
+        <p class="shaixuan_cb"><input type="checkbox" /><label for="">筛选条件</label></p>
+        <p class="shaixuan_cb"><input type="checkbox" /><label for="">筛选条件</label></p>
+        <div class="s_cus_i"><form><input type="text" class="s_cus_t" placeholder="请输入商家名称" /><input type="submit" value="" class="s_cus_s"  /></form></div>
+        <div class="page_top">
+        	<p class="prev_a_top"><a href="#"></a></p>
+            <p class="page_a_top">共找到&nbsp;<font>121</font>&nbsp;条&nbsp;&nbsp;&nbsp;&nbsp;<font>1</font>/9</p>
+            <p class="next_a_top"><a href="#"></a></p>
+        </div>
+    </div>
+    <div class="list_tc">
+    	<ul>
+        	<li>
+            	<div class="tc_img">
+                	<p class="icon_tc2">
+                        <a class="color1">多样套餐</a>
+                        <a class="color2">满立减</a>
+                        <a class="color3">谁知道呢</a>
+                    </p>
+                  	<a href="product_infor.html"><img src="images/index_of_0902_10.png" width="384" /></a>
+                </div>
+                <p class="tc_title"><a href="product_infor.html">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="#"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li>
+            	<p class="tc_img"><a href="product_infor.html"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="product_infor.html">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="#"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li style="margin-right:0;">
+            	<p class="tc_img"><a href="product_infor.html"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="product_infor.html">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="product_infor.html"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li>
+            	<p class="tc_img"><a href="product_infor.html"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="product_infor.html">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="product_infor.html"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li>
+            	<p class="tc_img"><a href="product_infor.html"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="product_infor.html">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="product_infor.html"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li style="margin-right:0;">
+            	<p class="tc_img"><a href="product_infor.html"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="product_infor.html">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="product_infor.html"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li>
+            	<p class="tc_img"><a href="product_infor.html"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="product_infor.html">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="product_infor.html"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li>
+            	<p class="tc_img"><a href="#"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="#">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="#"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li style="margin-right:0;">
+            	<p class="tc_img"><a href="#"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="#">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="#"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li>
+            	<p class="tc_img"><a href="#"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="#">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="#"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li>
+            	<p class="tc_img"><a href="#"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="#">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="#"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+            <li style="margin-right:0;">
+            	<p class="tc_img"><a href="#"><img src="images/index_of_0902_10.png" width="384" /></a></p>
+                <p class="tc_title"><a href="#">按实际大红色的卡拉斯</a></p>
+                <p class="tc_sml_text"><font><b>[6.3折]</b></font>爱盛开大奖是的哈会计师的环境卡刷大厦的卡号是打开就爱上的卡上的卡号是可敬的阿萨德看了将阿萨德</p>
+                <div class="tc_price">
+                	<span class="tc_price_now"><font size="+1">￥</font>28.5</span>
+                    <span class="tc_price_old">原价：<del>￥28.5</del></span>
+                    <span class="tc_price_go"><a href="#"><img src="images/go_link_button.png" /></a></span>
+                </div>
+                <div class="blank"></div>
+                <div class="tc_x_q">
+                	<p class="tc_x_q_left">销量：300</p>
+                    <p class="tc_x_q_right">爱上大声</p>
+                </div>
+            </li>
+        </ul>
+        <div class="blank10"></div>
+        <div class="blank20"></div>
+        <div class="setpage">
+        	<span>共找到73条</span>
+        	<a href="#" class="paddlr">上一页</a>
+			<a id="hover_page">1</a>
+            <a href="#">2</a>
+            <a href="#" class="paddlr">下一页</a>
+       	</div>
+    </div>
+</div>
+<div class="blank20"></div>
+<div class="blank20"></div>
+<div class="footer">
+	<div class="footer_p_icon">
+    	<div class="footer_icon_main">
+        	<div class="footer_icon_main_400">
+            	<p class="blank10"></p>
+            	<p class="font14">全国免费服务热线</p>
+                <p class="font28">400-002-0000</p>
+                <p class="font14">全国免费服务热线</p>
+            </div>
+            <a class="bigicon3 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折扣折折扣扣</span></a>
+            <a class="bigicon2 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折扣扣</span></a>
+            <a class="bigicon1 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折超低扣扣</span></a>
+        </div>
+    </div>
+    <div class="footer_list">
+    	<div class="logo_share">
+        	<p class="logo_share_link"><a href="#"><img src="images/logo.png" /></a></p>
+            <a href="#" class="share_source"><img src="images/kongjian_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/txweibo_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/wechat_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/sina_share.png" /></a>
+            <span class="share_text">分享一下吧</span>
+        </div>
+        <div class="footer_list_item">
+        	<div class="footer_article">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+            <div class="footer_article border_l_r">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+            <div class="footer_article">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+        </div>
+        <div class="wechat">
+        	<div class="wechatinfor">
+            	<p class="wechatinfor_title">官方微信</p>
+                <p><a href="#"><img src="images/index_of_0902_30.png" /></a></p>
+            </div>
+            <div class="wechatinfor">
+            	<p class="wechatinfor_title">官方微信</p>
+                <p><a href="#"><img src="images/index_of_0902_30.png" /></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="blank20"></div>
+    <div class="footer_copy">
+    	<div class="footer_copy_main">
+        	<div class="footer_copy_left">
+            	<a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>
+            </div>
+        	<div class="footer_copy_right">
+            COPYRIGHT&nbsp;&nbsp;&copy;2015&nbsp;&nbsp;&nbsp;&nbsp;haimei.com&nbsp;&nbsp;&nbsp;&nbsp沪ICP备214587410-1&nbsp;&nbsp;&nbsp;&nbsp上海朗语网络信息科技有限公司
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

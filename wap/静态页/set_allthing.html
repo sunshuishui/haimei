@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="css/under.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/b_fontsize.js"></script>
+<title>嗨美-Hi，beauty</title>
+</head>
+
+<body>
+<header class="topnav">
+    <a href="javascript:history.back(-1)" class="back_tc_infor"></a>
+    <a class="order_infor_text">修改昵称</a>
+    <a class="back_tc_infor2"></a>
+</header>
+
+<div class="set_all_t">
+<input type="text" value="590111" placeholder='请设置您的昵称' />
+</div>
+
+
+
+<div class="set_all_t">
+<input type="hidden" value="0" id="sex" />
+<p class="select_sex_nohover select_sex" sex-data='1'>男</p>
+<div class="line-h"></div>
+<p class="select_sex_nohover select_sex" sex-data='0'>女</p>
+</div>
+<script>
+	$(function(){
+		$('.select_sex').click(function(){
+			$('#sex').val($(this).attr('sex-data'));
+			$('.select_sex').removeClass('select_sex_hover').addClass('select_sex_nohover');
+			$(this).removeClass('select_sex_nohover').addClass('select_sex_hover');
+		})	
+	})
+</script>
+
+
+<div class="set_all_t">
+<input type="text" value="590111" placeholder='请设置您的长居地' />
+</div>
+
+
+<p class="blank10"></p>
+<input type="submit" value="确定" class="tc_infor_price_go" />
+</body>
+</html>

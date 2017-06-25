@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="css/index.css" rel="stylesheet" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RD9UKnYEdKylLFew8BFuQkks"></script>
+<link rel="stylesheet" type="text/css" href="selectstyle/easydropdown.css"/>
+<script src="selectstyle/jquery.easydropdown.js"></script>
+<link rel="stylesheet" href="selectprice/jquery.range.css">
+<script src="selectprice/jquery.range.js"></script>
+<script>
+$(function(){
+	$(".new_help").hover(function(){
+		$(".nh").addClass("new_help_title_").removeClass("new_help_title");
+		$(".help_list").show();
+	},function(){
+		$(".nh").removeClass("new_help_title_").addClass("new_help_title");
+		$(".help_list").hide();
+	})	
+	autoHeight()
+	mapSearch();
+	
+	$('.range-slider').jRange({
+		from: 0,
+		to: 300,
+		step: 5,
+		format: '%s',
+		width: 180,
+		showLabels: true,
+		isRange : true
+	});
+	
+	$("#g2").click(function(){
+		var aa = $(".range-slider").val();
+		alert(aa);
+	});
+})
+
+//浏览器窗口改变大小
+function window_resize(){
+	if (window._resizeTimer) {
+        return
+    }
+    window._resizeTimer = setTimeout(function () {
+		$clientSize =getClientSize();
+		$('#allmap').css({'height':($clientSize.height-183)+'px'});
+		$('.map_l').css({'height':($clientSize.height-183)+'px'});
+		window._resizeTimer = null;
+	},100)
+}
+//浏览器可视区域大小
+function getClientSize(){
+    var c = window, b = document, a = b.documentElement;
+    if (c.innerHeight) {
+        return { width:c.innerWidth, height: c.innerHeight }
+    } else {
+        if (a && a.clientHeight) {
+            return { width: a.clientWidth, height: a.clientHeight }
+        } else {
+            return { width: b.body.clientWidth, height: b.body.clientHeight }
+        }
+    }
+}
+//百度地图区域宽度自动
+function autoHeight(){
+	$clientSize =getClientSize();
+	$('#allmap').css({'height':($clientSize.height-183)+'px'});
+	$('.map_l').css({'height':($clientSize.height-183)+'px'});
+	
+}
+window_resize();
+</script>
+
+<title>寻找美丽</title>
+</head>
+
+<body style="overflow-y:hidden;overflow-x:hidden;" onresize="window_resize()">
+<div class="top">
+	<div class="top_main">
+    	<div class="top_left">美丽，从头开始！<a href="login.html">请登录</a><a href="register.html">免费注册</a></div>
+    	<div class="top_right">
+            <div class="new_help">
+            	<p class="new_help_title nh">新手帮助</p>
+                <div class="help_list">
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">关注微信号</a></p>
+                    <p><a href="#">关注新浪微博</a></p>
+                </div>
+            </div>
+            <div class="top_member_center">
+            	<a href="#">会员中心</a>
+                <a href="#">我的收藏</a>
+                <a href="#">我的订单</a>
+                <a href="#">积分兑换</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top_second">
+	<div class="header_logo"><a href="/"><img src="images/logo.png" /></a></div>
+    <div class="search_header">
+    	<p class="search_header_h"><form action="" method="post"><input type="text" value="" class="search_header_input" /><input type="submit" value="搜索" class="search_header_submit"/></form></p>
+        <p class="search_header_c"><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a></p>
+    </div>
+    <div class="pingtai_icon">
+    	<a class="icon_1" href="#">超低折扣</a>
+        <a class="icon_2" href="#">无忧售后</a>
+        <a class="icon_3" href="#">服务保障</a>
+    </div>
+</div>
+
+<div class="top_nav">
+	<div class="top_nav_main">
+    	<a href="index.html" class="no_hover">嗨！</a>
+        <a href="find.html" class="nav_hover">寻找美丽</a>
+        <a href="youhuigo.html" class="no_hover">优惠GO</a>
+        <a href="liren.html" class="no_hover">丽人</a>
+        <a href="xianshi.html" class="no_hover">限时GO</a>
+        <a href="#" class="no_hover">时尚汇</a>
+   		<a href="#" class="no_hover">臭美</a>
+    </div>
+</div>
+
+<div style="width:100%;">
+<script>
+$(function(){
+	$('.change_display').click(function(){
+		$('.change_display').removeClass('search_hover');
+		$(this).addClass('search_hover');
+		$il=$(this).index();
+		$('.search_display').hide();
+		$('.search_display').eq($il).show();
+	})
+})
+</script>
+	<div class="map_l">
+    	<span class="change_display search_c search_hover">搜索条件</span>
+        <span class="change_display search_l">商家列表</span>
+        <div class="blank20"></div>
+        <div class="search_cm search_display">
+        <table cellpadding="0" cellspacing="0">
+        	<tr>
+            	<td width="70" height="60" align="center"><span class="search_span">地址</span></td>
+                <td><input type="text" class="search_map_input" /></td>
+            </tr>
+            <tr>
+            	<td width="70" height="60" align="center"><span class="search_span">项目</span></td>
+                <td><select class="dropdown">
+                    <option>洗</option>
+                    <option>染</option>
+                    <option>烫</option>
+                    <option>剪</option>
+                    </select></td>
+            </tr>
+            <tr width="70" height="60" align="center">
+            	<td><span class="search_span">活动</span></td>
+                <td>
+                <script>
+                $(function(){
+					$active_length=$('.search_map_active li').length;
+					$width_al=$('.search_map_active').width();
+					$single_w=($width_al-($active_length-1)*3)/3-30;
+					$('.search_map_active li').css({'width':$single_w});
+					
+					
+					$('.search_map_active li').click(function(){
+						$stat=$(this).attr('hover');
+						if($stat=='0'){
+							$(this).attr('hover','1');
+							$(this).css({'background-image':'url(images/dui.png)','background-color':'#e4475c'});	
+						}else{
+							$(this).attr('hover','0');	
+							$(this).css({'background-image':'url(images/quan.png)','background-color':'#ff647c'});	
+						}
+						
+						$active_value='';
+						$('.search_map_active li[hover=1]').each(function($key,$obj){
+								if($active_value){
+									$active_value=$active_value+','+$($obj).attr('data');	
+								}else{
+									$active_value=$($obj).attr('data');	
+								}
+						})
+						$('#active_value').val($active_value);
+					})
+				})
+                </script>
+                <input type="hidden" value="" id="active_value" />
+                <ul class="search_map_active">
+                	<li data="1" hover='0'>促</li>
+                    <li data="2" hover='0'>限</li>
+                    <li data="3" id="nomargin" hover='0'>慧</li>
+                </ul>
+                </td>
+            </tr>
+            <tr width="70" height="60" align="center">
+            	<td><span class="search_span">价格</span></td>
+                <td>
+                <div class="price_rang">
+                    <input class="range-slider" type="hidden" value="0,300"/>
+                </div>
+                </td>
+            </tr>
+        </table>
+        </div>
+        <div class="search_lm search_display">
+        	<ul>
+            	<li>
+                	<div class="search_lm_infor">
+                    	<p class="search_lm_title"><a href="#">啊实打实看得见</a></p>
+                        <div class="search_lm_score"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div></div>
+                        <p class="search_lm_price">￥<font>169</font>元起</p>
+                    </div>
+                    <div class="search_lm_img"><a href="#"><img src="images/index_of_0902_10.png" width="105" height="65" /></a></div>
+                </li>
+                <li>
+                	<div class="search_lm_infor">
+                    	<p class="search_lm_title"><a href="#">啊实打实看得见</a></p>
+                        <div class="search_lm_score"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div></div>
+                        <p class="search_lm_price">￥<font>169</font>元起</p>
+                    </div>
+                    <div class="search_lm_img"><a href="#"><img src="images/index_of_0902_10.png" width="105" height="65" /></a></div>
+                </li>
+                <li>
+                	<div class="search_lm_infor">
+                    	<p class="search_lm_title"><a href="#">啊实打实看得见</a></p>
+                        <div class="search_lm_score"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div></div>
+                        <p class="search_lm_price">￥<font>169</font>元起</p>
+                    </div>
+                    <div class="search_lm_img"><a href="#"><img src="images/index_of_0902_10.png" width="105" height="65" /></a></div>
+                </li>
+                <li>
+                	<div class="search_lm_infor">
+                    	<p class="search_lm_title"><a href="#">啊实打实看得见</a></p>
+                        <div class="search_lm_score"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div></div>
+                        <p class="search_lm_price">￥<font>169</font>元起</p>
+                    </div>
+                    <div class="search_lm_img"><a href="#"><img src="images/index_of_0902_10.png" width="105" height="65" /></a></div>
+                </li>
+                <li>
+                	<div class="search_lm_infor">
+                    	<p class="search_lm_title"><a href="#">啊实打实看得见</a></p>
+                        <div class="search_lm_score"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div></div>
+                        <p class="search_lm_price">￥<font>169</font>元起</p>
+                    </div>
+                    <div class="search_lm_img"><a href="#"><img src="images/index_of_0902_10.png" width="105" height="65" /></a></div>
+                </li>
+                <li>
+                	<div class="search_lm_infor">
+                    	<p class="search_lm_title"><a href="#">啊实打实看得见</a></p>
+                        <div class="search_lm_score"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div></div>
+                        <p class="search_lm_price">￥<font>169</font>元起</p>
+                    </div>
+                    <div class="search_lm_img"><a href="#"><img src="images/index_of_0902_10.png" width="105" height="65" /></a></div>
+                </li>
+                <li>
+                	<div class="search_lm_infor">
+                    	<p class="search_lm_title"><a href="#">啊实打实看得见</a></p>
+                        <div class="search_lm_score"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div></div>
+                        <p class="search_lm_price">￥<font>169</font>元起</p>
+                    </div>
+                    <div class="search_lm_img"><a href="#"><img src="images/index_of_0902_10.png" width="105" height="65" /></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+    $(function(){
+		$('.map_c').click(function(){
+			$l=$('.map_l').width();
+			if($l>1){
+				$('.map_l').css({'width':'0px'});	
+				$('.map_c').css({'left':'1px'});	
+				$('.map_c img').attr('src','images/right_jiantou.png');
+				$('.map_r').css({'margin-left':'0'});	
+			}else{
+				$('.map_l').css({'width':'290px'});	
+				$('.map_c').css({'left':'290px'});	
+				$('.map_c img').attr('src','images/left_jiantou.png');
+				$('.map_r').css({'margin-left':'290px'});	
+			}
+		})	
+	})
+    </script>
+    <a class="map_c"><img src="images/left_jiantou.png" /></a>
+    <div class="map_r">
+    	<div id="allmap"></div>
+    </div>
+    
+    <script>
+	
+        
+	function mapSearch(){
+		var map = new BMap.Map("allmap");
+		var point = new BMap.Point(116.404,39.915);
+		map.centerAndZoom(point, 15);
+		
+		var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL}); 
+		map.addControl(top_right_navigation);
+		
+		
+		var points = [
+		new BMap.Point(116.411776,39.942833),
+		new BMap.Point(116.320791,40.003682),
+		new BMap.Point(116.275186,39.896095),
+		new BMap.Point(116.425098,39.946249),
+		new BMap.Point(116.359823,39.984761),
+		new BMap.Point(116.316479,39.98323),
+		new BMap.Point(116.385986,39.946124),
+		new BMap.Point(116.427545,40.00796),
+		new BMap.Point(116.446965,39.911603),
+		new BMap.Point(116.454579,39.946652)];
+	
+		for(var i=0;i<points.length;i++){
+			var myIcon =new BMap.Icon("img/mark.png", new BMap.Size(26,48), {
+			anchor: new BMap.Size(13,48),
+			infoWindowAnchor: new BMap.Size(13,24)
+			});
+			var iconMk = new BMap.Marker(points[i],{icon:myIcon});  //创建标注
+			map.addOverlay(iconMk);    //添加marker到地图上
+			
+			var opts = {
+			  width : 230,     // 信息窗口宽度
+			  height: 280,     // 信息窗口高度
+			  title : '<a href="#"><img src="./images/index_of_0902_10.png" width="230" height="160" /></a><p class="h_map_title"><a href="#">啊实打实扩大了盛开的</a></p>'
+			}
+			var sinfor='<div class="h_ct"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div><div class="pingfen1_all_fr"><span class="liren_icon color1">促</span><span class="liren_icon color2">慧</span><span class="liren_icon color3" style="margin-right:0">限</span></div></div><div class="blank10"></div><p class="h_map_address">上海市闸北区红通路360号一天下大厦22楼C09</p><div class="h_map_infor"><font color="#666">567人购买</font><span class="fr_infor">￥<font size="+2" color="#ff346d">567</font>元起</span></div>';
+
+			var infoWindow =new BMap.InfoWindow(sinfor, opts);
+			iconMk.addEventListener("mouseover", function(){this.openInfoWindow(infoWindow);});
+		}
+		map.setViewport(points);
+	}
+	</script>
+</div>
+</body>
+</html>

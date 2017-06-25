@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="css/register.css" rel="stylesheet" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/placeholder.js"></script>
+
+<script>
+function checkInput(){
+	$mobile=$('#mobile').val();	
+	$yzcode=$('#yzcode').val();	
+	$password=$('#password').val();	
+	var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(14[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+	if(!myreg.test($mobile) || $mobile==''){
+		alert('请正确输入手机号码！');
+		return false;	
+	}
+	
+	if($yzcode.length!=4){
+		alert('请正确输入验证码！');
+		return false;		
+	}
+	
+	if($password.length<6 || $password=='请输入最少6位密码'){
+		alert('密码不能少于6位！');
+		return false;		
+	}
+	return true;
+}
+</script>
+<title>登陆</title>
+</head>
+
+<body>
+<div class="top_second_all">
+    <div class="top_second">
+        <div class="header_logo"><a href="/"><img src="images/logo.png" /></a></div>
+        <div class="pingtai_icon">
+            <a class="icon_1" href="#">超低折扣</a>
+            <a class="icon_2" href="#">无忧售后</a>
+            <a class="icon_3" href="#">服务保障</a>
+        </div>
+    </div>
+</div>
+<div class="main_register">
+	<p class="left_ads"><span>.</span><img src="images/temp_login.png" /></p>
+    <form method="post" action="" onsubmit="return checkInput();">
+    <div class="register_main_c">
+    	<div class="register_main_title">
+        	<span class="register_main_title1">用户注册</span>
+            <span class="register_main_title2">已有账号？<a href="#">直接登录</a></span>
+        </div>
+        <div class="blank30"></div>
+        <p><input type="text" class="reg_input" placeholder='手机号' id="mobile" /></p>
+        <div class="blank30"></div>
+        <p><input type="text" class="reg_input2" placeholder='短信校验码' id="yzcode" /> <input type="button" class="sendsmsbutton" value="获取短信校验码"/></p>
+        <div class="blank30"></div>
+        <p><input type="password" class="reg_input" placeholder='请输入最少6位密码' id="password" /></p>
+        <div class="xieyi_agree"><a href="#">注册即接受《嗨美用户协议》</a></div>
+        <input type="submit" value="同意协议并注册" class="sub_agree_xieyi" />
+        <div class="kj_login">
+        快捷登录：<a class="sina_login" href=""></a><a class="tx_login" href=""></a><a class="wx_login" href=""></a>
+        </div>
+    </div>
+    </form>
+</div>
+
+<div class="simple_footer">
+<br />嗨美网 www.himei.wang 上海朗语网络信息科技有限公司<br />沪ICP备451278-1<br /><br />
+</div>
+<script>
+$(function(){
+	$sendok=false; $timeout=0;
+	$('.sendsmsbutton').click(function(){
+		$sendok=true;
+		
+		if($sendok && $timeout==0){
+			$(this).attr('disabled','disabled');
+			$('.sendsmsbutton').val('59秒后重新发送');
+			$('.sendsmsbutton').css('color','#999');
+			$timeout=59;
+			$sendtime=setInterval(function(){
+				$timeout=$timeout-1;
+				if($timeout>=1){
+					$('.sendsmsbutton').val($timeout+'秒后重新发送');
+				}else{
+					clearInterval($sendtime);
+					$('.sendsmsbutton').css('color','#666');
+					$('.sendsmsbutton').val('获取短信校验码');
+					$('.sendsmsbutton').attr('disabled',false);
+				}
+			},1000);
+		}	
+	})	
+})
+</script>
+</body>
+</html>

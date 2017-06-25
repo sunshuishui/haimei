@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/b_fontsize.js"></script>
+<title>嗨美-Hi，beauty</title>
+<script>
+function ShowCountDown($classID) 
+{ 
+	$num=$('.'+$classID).length;
+
+	for($i=0;$i<$num;$i++){
+		$enddate=$('.'+$classID).eq($i).find('.enddate').val();
+		var now = new Date();
+		var endDate= new Date(Date.parse($enddate.replace(/-/g,"/")));  
+		var leftTime=endDate.getTime()-now.getTime();
+		if(leftTime>0){
+			var leftsecond = parseInt(leftTime/1000);
+			
+			var day=Math.floor(leftsecond/(60*60*24)); 
+			var hour=Math.floor((leftsecond-day*24*60*60)/3600); 
+			var minute=Math.floor((leftsecond-day*24*60*60-hour*3600)/60); 
+			var second=Math.floor(leftsecond-day*24*60*60-hour*3600-minute*60); ;
+			$('.'+$classID).eq($i).find('.d_day').html(day);
+			$('.'+$classID).eq($i).find('.d_hour').html(hour);
+			$('.'+$classID).eq($i).find('.d_minute').html(minute);
+			$('.'+$classID).eq($i).find('.d_second').html(second);
+		}
+	}
+}
+window.setInterval(function(){ShowCountDown('tc_infor_icon');},1000);
+$(function(){
+	$('.xh_click').click(function(){
+	  $id=$(this).attr('data-id');
+	  $hoveClass=$(this).attr('class');
+	  if($hoveClass.indexOf('hover')>=0){
+		  $(this).addClass('sj_xh').removeClass('sj_xh_hover');
+		}else{
+			$(this).addClass('sj_xh_hover').removeClass('sj_xh');	
+		}
+	  
+	})
+	
+})
+
+</script>
+</head>
+
+<body>
+<div class="top_img">
+    <a href="javascript:history.back(-1)" class="sj_fh"></a>
+    <a class="sj_xh xh_click" data-id='123'><span class="sj_xh_xin"></span><span class="sj_xh_num">54</span></a>
+	<div class="sj_img_infor"><img src="images/test2.png"/></div>
+    <div class="beautiful_infor2">
+        <p class="beautiful_title">洗剪吹洗剪吹</p>
+    </div>
+</div>
+
+<div class="tc_infor_price">
+	<span class="tc_infor_price_now"><font>￥</font>169</span>
+    <span class="tc_infor_price_old"><del>￥199</del></span>
+    <span class="tc_infor_yuyue_count">201次预约</span>
+   <!-- <a href="order.html" class="tc_infor_price_go">我要预约</a>-->
+</div>
+<p class="line-h"></p>
+<div class="sj_address">
+    <table cellpadding="0" cellspacing="0"><tr>
+        <td class="sj_address_infor2">仅售178元，最高价值1440元欧莱雅美发2选1！全国连锁，节假日通用！可叠加使用！</td>
+        <td class="sj_address_sxl"></td>
+        <td class="sj_address_sx"></td>
+        <td class="sj_address_fenxiang" align="right"><img src="images/share.png" /></td>
+        </tr>
+    </table>
+</div>
+<p class="line-h"></p>
+<!--<div class="tc_infor_fl">
+	<span class="tui_icon">随时退</span>
+    <span class="tui_icon">过期退</span>
+    <span class="tui_icon">极速退</span>
+    <span class="tc_infor_yishou">【本服务已接受201次预约】</span>
+</div>
+<p class="line-h"></p>
+-->
+
+<div class="blank20"></div>
+<p class="line-h"></p>
+<div class="tc_infor_icon">
+	<span class="tc_infor_icon1 color1">限时预约</span>
+    剩余：<span class="d_day">0</span>天<span class="d_hour">0</span>小时<span class="d_minute">0</span>分<span class="d_second">0</span>秒<input type="hidden" value="2015-12-06 15:20:20" class="enddate" />
+</div>
+<p class="line-h"></p>
+<div class="tc_infor_icon">
+	<span class="tc_infor_icon1 color2">女士专用</span>
+    女士限购套餐
+</div>
+<p class="line-h"></p>
+<div class="tc_infor_icon">
+	<span class="tc_infor_icon1 color3">限量预约</span>
+    限量<span class="ty_bz">50</span>个，还剩<span class="ty_bz">10</span>个
+</div>
+<p class="line-h"></p>
+<div class="blank20"></div>
+<div class="sj_infor2">
+    <p class="shxx_title">商家信息</p>
+    <a href="shangjia.html">
+        <div class="sj_infor2_left">
+            <p class="sj_infor2_left_name">永琪造型（宜山路店）</p>
+            <p class="member_score2">服务<span>4.5</span>环境<span>4.5</span>质量<span>4.5</span></p>
+            <p class="sj_infor2_left_address">上海市闸北区恒通路360号，一天下大厦6楼302事</p>
+        </div>
+        <div class="sj_tuijian_an2"></div>
+    </a>
+</div>
+<div class="blank20"></div>
+<div class="tc_infor_content">
+	<p class="shxx_title">服务详情</p>
+    <p class="shxx_title">消费提醒</p>
+</div>
+<div class="blank20"></div>
+<p class="beautiful_h2"><i></i>&nbsp;&nbsp;&nbsp;&nbsp;本店其他服务</p>
+<div class="sj_tuijian">
+	<ul>
+    	<li>
+        	<a href="">
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">总监洗剪吹套餐，双休通用</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥16</span><span class="tc_price_old">￥30</span><span class="tc_price_yishou">已预约88次</span></p>
+                </div>
+                <div class="sj_tuijian_an"></div>
+            </a>
+        </li>
+        <li>
+        	<a href="">
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">15分钟速剪，双休通用</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥69</span><span class="tc_price_old">￥1</span><span class="tc_price_yishou">已预约88次</span></p>
+                </div>
+                <div class="sj_tuijian_an"></div>
+            </a>
+        </li>
+        <li>
+        	<a href="">
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">洗剪吹</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥1</span><span class="tc_price_old">￥10</span><span class="tc_price_yishou">已预约88次</span></p>
+                </div>
+                <div class="sj_tuijian_an"></div>
+            </a>
+        </li>
+    </ul>
+</div>
+<p class="beautiful_h2_3"><a href="shangjia.html">查看全部&nbsp;&nbsp;></a></p>
+<div class="back_top back_top2"><a></a></div>
+<div class="tc_infor_price2">
+    <a href="order.html" class="tc_infor_price_go">我要预约</a>
+</div>
+<div class="height100"></div>
+
+<script>
+/*window.onload=function(){
+	$top=$('.sj_address').offset().top;	
+	$(window).scroll(function(){
+		$scrolltop=$(document).scrollTop();	
+		if($scrolltop>$top){
+			$('.tc_infor_price2').show();
+		}else{
+			$('.tc_infor_price2').hide();
+		}
+	})	
+}*/
+</script>
+</body>
+</html>

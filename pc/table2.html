@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<title>无标题文档</title>
+<style>
+body{margin:0;padding:0;font-size:12px;font-family:arial,"微软雅黑","Arial Narrow",HELVETICA;_background-image: url(about:blank);_background-attachment: fixed; }
+form,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}input,select{font-size:12px;line-height:16px;}img{border:0;}ul,li{list-style-type:none;}
+a{ text-decoration:none;}
+table td{ padding:15px 0}
+table td p{ margin-bottom:5px}
+table input{ border:solid 1px #EFEFEF}
+table img{ cursor:pointer; margin-right:5px}
+.width550{ width:650px}
+.ap{ width:900px; margin:0 auto} 
+.removetr{ float:right }
+</style>
+</head>
+
+<body>
+<form method="post" action="" onsubmit="return givename()">
+<table width="900" bgcolor="#c8c7c7" cellpadding="0" cellspacing="1" align="center" class="tc_infor_table">
+	<tr>
+    	<td width="160" bgcolor="#f9f9f9"><input type="text" /></td>
+        <td height="40" bgcolor="#ffffff"><p><input type="text" class="width550" /><img src="./img/del.png" onclick="delinput(this);" /></p><img src="./img/zj.png" onclick="addinput(this);" /><img src="./img/del.png" class="removetr" onclick="deltr(this)" /></td>
+    </tr>
+</table>
+<input type="hidden" id="trnum" value="1" />
+<p class="ap"><img src="./img/zj.png" onclick="addtr()" /></p>
+<input type="submit" />
+</form>
+<script>
+function addtr(){
+	$tr_html='<tr>    	<td width="160" bgcolor="#f9f9f9"><input type="text" /></td>        <td height="40" bgcolor="#ffffff"><p><input type="text" class="width550" /><img src="./img/del.png" onclick="delinput(this);" /></p><img src="./img/zj.png" onclick="addinput(this);" /><img src="./img/del.png" class="removetr" onclick="deltr(this)" /></td>    </tr>';
+	$('table').append($tr_html);
+}
+function addinput($this){
+	$input_html='<p><input type="text" class="width550" /><img src="./img/del.png" onclick="delinput(this);" /></p>';
+	$($this).prev().after($input_html);
+}
+function delinput($this){
+	if($($this).parent().parent().find('p').length<=1){
+		alert('请删除整行！');	
+	}else{
+		if(confirm('您确定要删除吗？')){
+			$($this).parent().remove();	
+		}
+	}
+}
+function deltr($this){
+	if(confirm('您确定要删除这一行吗？')){
+		$($this).parent().parent().remove()
+	}
+}
+function givename(){
+	$trnum=$('.tc_infor_table tr').length;
+	$('#trnum').val($trnum);
+	for($i=0;$i<$trnum;$i++){
+		$('.tc_infor_table tr').eq($i).find('td').eq(0).find('input').attr('name','title'+$i);	
+		$('.tc_infor_table tr').eq($i).find('td').eq(1).find('input').attr('name','infor'+$i+'[]');	
+	}
+	return false;
+}
+</script>
+</body>
+</html>

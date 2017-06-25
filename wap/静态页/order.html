@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/b_fontsize.js"></script>
+<title>嗨美-Hi，beauty</title>
+</head>
+
+<body>
+<header class="topnav">
+<a href="javascript:history.back(-1)" class="back_tc_infor"></a>
+<a class="order_infor_text">预约信息</a>
+<a class="back_tc_infor2"></a>
+</header>
+<div class="blank20"></div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">一时代造型一站式</span>
+</div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">洗剪吹</span>
+    <span class="color_font2">￥198元</span>
+</div>
+<!--<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">数量：</span>
+    <div class="right_count">
+    	<a class="jia_count"></a>
+        <a class="count_input"><input type="text" readonly="readonly" value="1" class="dgcount" /></a>
+        <a class="jian_count"></a>
+    </div>
+</div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">总计：</span>
+    <span class="color_font3">￥198元</span>
+</div>-->
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font"><a href="javascript:alert('确认预约后，商家将您的预约信息保留5天，超出5天此预约信息自动无效！')">保留预约时间(?)</a>：</span>
+    <span class="color_font2">5天</span>
+</div>
+<p class="line-h"></p>
+<!--<div class="blank20"></div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">预约信息发送至：</span>
+</div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font radio_selected select_x" data-type='1'>个人微信</span>
+    <a href="#" class="not_band">未绑定</a>
+</div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font radio_noselect select_x" data-type='2'>手机短信</span>
+    <a href="#" class="not_band">未绑定</a>
+</div>-->
+<p class="line-h"></p>
+<div class="sub_order_out"><p class="sub_order_out2"><input type="submit" value="确认预约" class="sub_order" /></p></div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">温馨提示：</span>
+</div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">1、预约信息将发送至您的微信，注意查收！</span>
+</div><p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">2、请于保留预约时间内至商家享受服务</span>
+</div>
+<p class="line-h"></p>
+<div class="order_xiangmu">
+	<span class="color_font">3、请注意商家营业时间【9:00-22:00】</span>
+</div>
+<p class="line-h"></p>
+<script>
+$(function(){
+/*	$('.select_x').click(function(){
+			$datatype=$(this).attr('data-type');
+			$('#send_type').val($datatype);
+			$('.select_x').removeClass('radio_selected').addClass('radio_noselect');
+			$(this).removeClass('radio_noselect').addClass('radio_selected');
+	})	*/
+	
+	$('.jian_count').click(function(){
+		$dgcount=$('.dgcount').val();
+		if($dgcount<=1){
+		}else{
+			$('.dgcount').val($('.dgcount').val()-1);
+		}
+	})	
+	$('.jia_count').click(function(){
+		$dgcount=$('.dgcount').val();
+		$('.dgcount').val(parseInt($('.dgcount').val())+1);	
+	})
+})
+</script>
+</body>
+</html>

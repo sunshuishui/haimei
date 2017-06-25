@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/b_fontsize.js"></script>
+<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+<script type="text/javascript">
+autoHeight();
+</script>
+<style>
+html{ font-size:100px;}
+body{margin:0;padding:0;_background-image: url(about:blank);_background-attachment: fixed; font-family:'微软雅黑',Arail }
+form,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin:0;padding:0;}img{border:0;}ul,li{list-style-type:none;}
+.backfujin{ width:0.4rem; height:0.4rem; display:block; background-image:url(./images/back_icon.png); background-size:0.4rem; position:absolute; z-index:9; top:0.15rem; left:0.15rem}
+#allmap{ width:100%;}
+
+.dianpu{ width:94%; max-width:10rem; text-align:left; display:block; height:0.35rem; line-height:0.35rem; color:#ff346d;-moz-border-radius:0.06rem;-webkit-border-radius:0.06rem;border-radius:0.06rem; position:fixed; z-index:9; left:3%; bottom:0.4rem; background:#fff; font-size:0.2rem; text-decoration:none;-moz-box-shadow:0px 0px 10px 2px #999;-webkit-box-shadow:0px 0px 10px 2px #999; box-shadow:0px 0px 10px 2px #999; visibility:hidden;}
+.dianpu span{margin-left:0.1rem}
+.dianpu img{ float:right; width:0.25rem; margin-top:0.05rem;margin-right:0.1rem}
+
+
+</style>
+<title>地图</title>
+</head>
+
+<body>
+<a href="javascript:history.back();" class="backfujin"></a>
+<div id="allmap"></div>
+
+<a class="dianpu" href="#"><span>美琪美容造型</span><img src="./images/youjian_yuan.png" /></a>
+<script>
+$(function(){
+	autoHeight();
+	mapSearch();
+})
+//浏览器可视区域大小
+function getClientSize(){
+    var c = window, b = document, a = b.documentElement;
+    if (c.innerHeight) {
+        return { width:c.innerWidth, height: c.innerHeight }
+    } else {
+        if (a && a.clientHeight) {
+            return { width: a.clientWidth, height: a.clientHeight }
+        } else {
+            return { width: b.body.clientWidth, height: b.body.clientHeight }
+        }
+    }
+}
+//百度地图区域宽度自动
+function autoHeight(){
+	$clientSize =getClientSize();
+	$('#allmap').css({'height':($clientSize.height)+'px'});
+}
+function mapSearch(){
+	var center = new qq.maps.LatLng(31.237279,121.467547);
+	var map = new qq.maps.Map(document.getElementById('allmap'),{
+		 //设置控件的地图类型和位置
+        mapTypeControlOptions:{
+            mapTypeIds: [
+            ],
+        },
+		zoomControl: false,
+        center: center,
+        zoom: 15
+    });
+	
+	var marker2 = new qq.maps.Marker({
+		position:center,
+		map: map
+	});
+		
+	var markerIcon2 = new qq.maps.MarkerImage(
+		"images/iam.png",
+		new qq.maps.Size(26,38),
+		new qq.maps.Point(0,0)
+	);
+	marker2.setIcon(markerIcon2);
+	marker2.setAnimation(qq.maps.MarkerAnimation.BOUNCE);
+
+	var points = [
+		new qq.maps.LatLng(31.239848,121.475315),
+		new qq.maps.LatLng(31.236179,121.465788),
+		new qq.maps.LatLng(31.235261,121.465831),
+		new qq.maps.LatLng(31.232179,121.471324),
+		new qq.maps.LatLng(31.238490,121.472526),
+		new qq.maps.LatLng(31.235812,121.466990),
+		new qq.maps.LatLng(31.242563,121.468191)];
+	
+	
+	var $haveClick=0;
+	var marker_hover;
+	var markerIcon_hover;
+	for(var i=0;i<points.length;i++){
+		(function(n){
+			var marker = new qq.maps.Marker({
+				position: points[n],
+				map: map
+			});
+			var markerIcon = new qq.maps.MarkerImage(
+				"images/mark.png",
+				new qq.maps.Size(26,48),
+				new qq.maps.Point(0,0)
+			);
+			marker.setIcon(markerIcon);
+			
+			qq.maps.event.addListener(marker, 'click', function() {
+				if($haveClick==1){
+					marker_hover.setMap(null);
+				}
+				
+				marker_hover = new qq.maps.Marker({
+					position: points[n],
+					map: map
+				});
+				markerIcon_hover = new qq.maps.MarkerImage(
+					"images/mark_hover.png",
+					new qq.maps.Size(26,48),
+					new qq.maps.Point(0,0)
+				);
+				marker_hover.setIcon(markerIcon_hover);
+				$haveClick=1;
+				
+            	getIndex(n);
+            });
+			
+		})(i)
+	}
+	
+}
+function getIndex($index){
+	$('.dianpu').css('visibility','visible');
+	$('.dianpu span').text('坐标的数组下标是'+$index);
+}
+</script>
+</body>
+</html>

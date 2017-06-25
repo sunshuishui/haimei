@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/swiper.min.css">
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/b_fontsize.js"></script>
+
+<title>附近</title>
+</head>
+
+<body>
+<!--头部开始-->
+<header class="topnav">
+<a href="#" class="grzxbutton"></a>
+<a href="search.html" class="searchbutton">&nbsp;&nbsp;请输入商家名、服务项目或商圈</a>
+<a href="#" class="grzxbutton2"></a>
+</header>
+<!--头部结束-->
+<div class="tc_list">
+    <p class="tc_xs">全部区域<img src="./images/sanjiao_up.png"/></p>
+    <p class="tc_fenge"></p>
+    <p class="tc_xs">地图<img src="./images/sanjiao_up.png"/></p>
+</div>
+<div class="tc_xs_all">
+<div class="tc_area_all_list">
+    	<div class="area_line">
+        	<p class="area-select" ardata='shangquan_s'>商圈</p>
+            <p ardata='ditie_s'>地铁站</p>
+        </div>
+<script>
+function ft_click($index){
+	$('.tc_xs:eq('+$index+')').click();
+}
+function changjian($j,$b){
+	if($b==1){
+		$('.tc_xs:eq('+$j+')').css('color','#ff346d');
+		$('.tc_xs:eq('+$j+')').find('img').attr('src','./images/sanjiao_down.png');	
+	}else{
+		$('.tc_xs:eq('+$j+')').css('color','#666');
+		$('.tc_xs:eq('+$j+')').find('img').attr('src','./images/sanjiao_up.png');		
+	}
+}
+
+$back_up=0;
+$isonce=0;
+$('.tc_xs:eq(0)').click(function(){
+	if($isonce==0){
+		$('.tc_area_all_list').css('height','auto');
+		$('.tc_area_all_list').hide();
+		$('.ditie_s').hide();
+		$isonce=1;
+	}
+	$('.tc_area_all_list').slideToggle('fast',function(){
+		if($('.tc_area_all_list').css('display')!='none'){
+			$back_up=1;
+		}else{
+			$back_up=0;	
+		}
+		changjian(0,$back_up);	
+	});
+})
+$('.tc_xs:eq(1)').click(function(){
+	location.href='map.html';
+})
+$(window).scroll(function(){
+	if($back_up==1){
+		$('.tc_area_all_list').hide();
+		$back_up=0;	
+		$('.tc_xs').css('color','#666');
+		$('.tc_xs').find('img').attr('src','./images/sanjiao_up.png');
+	}	
+})
+
+$(function(){
+	$('.tc_area_all_left li').click(function(){
+		$cldata=$(this).attr('cldata');
+		$(this).siblings('li').removeClass('moren_hover');
+		$(this).addClass('moren_hover');
+		$(this).parents('.tc_area_all_left').next().find('.tc_area_all_rightc').hide();
+		$(this).parents('.tc_area_all_left').next().find('.'+$cldata+'_area').show();
+	})	
+	$('.area_line p').click(function(){
+		$ardata=$(this).attr('ardata');
+		$(this).siblings('p').removeClass('area-select');
+		$(this).addClass('area-select');
+		$('.shangquan_s,.ditie_s').hide();
+		$('.'+$ardata).show();
+	})
+})
+
+</script>
+        <div class="shangquan_s">
+            <div class="tc_area_all_left">
+                <div class="swiper-container tc_area_all_leftc">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide" cldata='allarea'><a href="#">全部区域<span>123</span></a></li>
+                        <li class="swiper-slide moren_hover" cldata='huangpu'><a>黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='jingan'><a>静安区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='xuhui'><a>徐汇区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='zhabei'><a>闸北区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='minhang'><a>闵行区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='changning'><a>长宁区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='putuo'><a>普陀区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='baoshan'><a>宝山区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='minhang'><a>闵行区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='changning'><a>长宁区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='putuo'><a>普陀区<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='baoshan'><a>宝山区<span>123</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc_area_all_right">
+                <div class="swiper-container tc_area_all_rightc huangpu_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                    </ul>
+                 </div>
+                 <div class="swiper-container tc_area_all_rightc jingan_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                    </ul>
+                 </div>
+                 <div class="swiper-container tc_area_all_rightc xuhui_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">徐汇区</a></li>
+                        <li class="swiper-slide"><a href="#">徐汇区</a></li>
+                        <li class="swiper-slide"><a href="#">徐汇区</a></li>
+                        <li class="swiper-slide"><a href="#">徐汇区</a></li>
+                    </ul>
+                 </div>
+                 <div class="swiper-container tc_area_all_rightc zhabei_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                    </ul>
+                 </div>
+                 <div class="swiper-container tc_area_all_rightc changning_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">长宁区</a></li>
+                        <li class="swiper-slide"><a href="#">长宁区</a></li>
+                        <li class="swiper-slide"><a href="#">长宁区</a></li>
+                        <li class="swiper-slide"><a href="#">长宁区</a></li>
+                    </ul>
+                 </div>
+                <div class="swiper-container tc_area_all_rightc putuo_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">普陀区</a></li>
+                        <li class="swiper-slide"><a href="#">普陀区</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ditie_s">
+            <div class="tc_area_all_left">
+                <div class="swiper-container tc_area_all_leftc">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide moren_hover" cldata='yihaoxian'><a>1号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='erhaoxian'><a>2号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='sanhaoxian'><a>3号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='sihaoxian'><a>4号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='minhang'><a>5号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='changning'><a>6号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='putuo'><a>7号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='baoshan'><a>8号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='minhang'><a>9号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='changning'><a>10号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='putuo'><a>11号线<span>123</span></a></li>
+                        <li class="swiper-slide" cldata='baoshan'><a>12号线<span>123</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc_area_all_right">
+                <div class="swiper-container tc_area_all_rightc yihaoxian_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">莘庄<span>12</span></a></li>
+                        <li class="swiper-slide"><a href="#">外环路<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">锦江乐园<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">上海南站<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">漕宝路<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">上海体院馆<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">徐家汇<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                        <li class="swiper-slide"><a href="#">黄浦区<span>123</span></a></li>
+                    </ul>
+                 </div>
+                 <div class="swiper-container tc_area_all_rightc erhaoxian_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">人民广场</a></li>
+                        <li class="swiper-slide"><a href="#">浦东机场</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                        <li class="swiper-slide"><a href="#">静安区</a></li>
+                    </ul>
+                 </div>
+                 <div class="swiper-container tc_area_all_rightc sanhaoxian_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">上海南站</a></li>
+                        <li class="swiper-slide"><a href="#">徐家汇</a></li>
+                        <li class="swiper-slide"><a href="#">徐汇区</a></li>
+                        <li class="swiper-slide"><a href="#">徐汇区</a></li>
+                    </ul>
+                 </div>
+                 <div class="swiper-container tc_area_all_rightc sihaoxian_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">上海火车站</a></li>
+                        <li class="swiper-slide"><a href="#">四号线</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                        <li class="swiper-slide"><a href="#">闸北区</a></li>
+                    </ul>
+                 </div>
+                 <div class="swiper-container tc_area_all_rightc changning_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">长宁区</a></li>
+                        <li class="swiper-slide"><a href="#">长宁区</a></li>
+                        <li class="swiper-slide"><a href="#">长宁区</a></li>
+                        <li class="swiper-slide"><a href="#">长宁区</a></li>
+                    </ul>
+                 </div>
+                <div class="swiper-container tc_area_all_rightc putuo_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#">全部</a></li>
+                        <li class="swiper-slide"><a href="#">普陀区</a></li>
+                        <li class="swiper-slide"><a href="#">普陀区</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="back_up" onclick="ft_click(0);"></p>
+    </div>
+</div>
+<div class="fujin_shangjia">
+	<ul>
+    	<li>
+        	<a href="shangjia.html">
+            	<div class="fj_shangjia_img"><img src="./images/th1.jpg" /></div>
+                <div class="fj_shangjia_infor">
+                	<div class="liren_name_infor">
+                    	<span class="liren_name">藤川国际造型</span>
+                        <span class="liren_ico color1">卡</span>
+                        <span class="liren_ico color2">保</span>
+                        <span class="liren_ico color3">验</span>
+                    </div>
+                    <div class="pingfen"><div class="pingfen_all"><img src="images/damuzhi_bg.png"><p style="width:90%"></p></div><span class="pingfen_all_sc">4.5</span><span class="weizhi_g"><1.1km</span></div>
+                    <div class="fj_youhui">
+                    	已有<font>36人</font>预约
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="shangjia.html">
+            	<div class="fj_shangjia_img"><img src="./images/th2.jpg" /></div>
+                <div class="fj_shangjia_infor">
+                	<div class="liren_name_infor">
+                    	<span class="liren_name">Mirror Salon</span>
+                        <span class="liren_ico color1">卡</span>
+                        <span class="liren_ico color2">保</span>
+                        <span class="liren_ico color3">验</span>
+                    </div>
+                    <div class="pingfen"><div class="pingfen_all"><img src="images/damuzhi_bg.png"><p style="width:90%"></p></div><span class="pingfen_all_sc">4.5</span><span class="weizhi_g"><1.1km</span></div>
+                    <div class="fj_youhui">
+                    	已有<font>16人</font>预约
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="shangjia.html">
+            	<div class="fj_shangjia_img"><img src="./images/th3.jpg" /></div>
+                <div class="fj_shangjia_infor">
+                	<div class="liren_name_infor">
+                    	<span class="liren_name">卡尔沙龙(华润八佰伴)</span>
+                        <span class="liren_ico color2">保</span>
+                        <span class="liren_ico color3">验</span>
+                    </div>
+                    <div class="pingfen"><div class="pingfen_all"><img src="images/damuzhi_bg.png"><p style="width:90%"></p></div><span class="pingfen_all_sc">4.5</span><span class="weizhi_g"><1.1km</span></div>
+                    <div class="fj_youhui">
+                    	已有<font>136人</font>预约
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="shangjia.html">
+            	<div class="fj_shangjia_img"><img src="./images/th4.jpg" /></div>
+                <div class="fj_shangjia_infor">
+                	<div class="liren_name_infor">
+                    	<span class="liren_name">PETER护肤造型</span>
+                        <span class="liren_ico color3">验</span>
+                    </div>
+                    <div class="pingfen"><div class="pingfen_all"><img src="images/damuzhi_bg.png"><p style="width:90%"></p></div><span class="pingfen_all_sc">4.5</span><span class="weizhi_g"><1.1km</span></div>
+                    <div class="fj_youhui">
+                    	已有<font>38人</font>预约
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="shangjia.html">
+            	<div class="fj_shangjia_img"><img src="./images/th1.jpg" /></div>
+                <div class="fj_shangjia_infor">
+                	<div class="liren_name_infor">
+                    	<span class="liren_name">香格俪莱(仁恒店)</span>
+                        <span class="liren_ico color2">保</span>
+                        <span class="liren_ico color3">验</span>
+                    </div>
+                    <div class="pingfen"><div class="pingfen_all"><img src="images/damuzhi_bg.png"><p style="width:90%"></p></div><span class="pingfen_all_sc">4.5</span><span class="weizhi_g"><1.1km</span></div>
+                    <div class="fj_youhui">
+                    	已有<font>136人</font>预约
+                    </div>
+                </div>
+            </a>
+        </li>
+         <li>
+        	<a href="shangjia.html">
+            	<div class="fj_shangjia_img"><img src="./images/th2.jpg" /></div>
+                <div class="fj_shangjia_infor">
+                	<div class="liren_name_infor">
+                    	<span class="liren_name">发琦造型Salon</span>
+                        <span class="liren_ico color1">卡</span>
+                        <span class="liren_ico color2">保</span>
+                        <span class="liren_ico color3">验</span>
+                    </div>
+                    <div class="pingfen"><div class="pingfen_all"><img src="images/damuzhi_bg.png"><p style="width:90%"></p></div><span class="pingfen_all_sc">4.5</span><span class="weizhi_g"><1.1km</span></div>
+                    <div class="fj_youhui">
+                    	已有<font>16人</font>预约
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="back_top"><a></a></div>
+<footer>
+	<p><a class="go_index" href="index.html"></a></p>
+    <p><a class="go_fujin" href="fujin.html"></a></p>
+    <p><a class="go_youhui" href="go.html"></a></p>
+</footer>
+<br />
+
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript">
+  var mySwiper = new Swiper('.swiper-container',{
+		direction : 'vertical',
+	  slidesPerView : 6
+  });
+</script>
+</body>
+</html>

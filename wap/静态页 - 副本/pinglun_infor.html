@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="css/under.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/b_fontsize.js"></script>
+<title>嗨美-Hi，beauty</title>
+</head>
+
+<body>
+<header class="topnav">
+    <a href="myself_center.html" class="back_tc_infor"></a>
+    <a class="order_infor_text">评论</a>
+    <a class="back_tc_infor2"></a>
+</header>
+<div class="sj_tuijian">
+	<ul>
+    	<li>
+        	<a href="">
+            	<div class="sj_tuijian_img"><img src="images/test2.png" /></div>
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">总监洗剪吹套餐，双休通用</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥16</span></p>
+                </div>
+            </a>
+        </li>
+   </ul>
+</div>
+<div class="order_sj_infor">
+	<p class="order_sj_infor1">造星一站式造型（宜山路店）</p>
+    <p class="order_sj_infor2">闸北区预警岗路108窗户广场金座</p>
+</div>
+<div class="line-h"></div>
+<div class="blank20"></div>
+<div class="line-h"></div>
+<div class="shiti_range" style="padding:0.2rem 0">
+	<p><span class="changeval_title">服务</span><input type="range" min='0' max='5' step="1" value='5' id="asd" onchange="changeNum(this);" class="range_num" /><span class="changeval">5</span><span class="changeval_text">很好</span></p>
+    <p><span class="changeval_title">环境</span><input type="range" min='0' max='5' step="1" value='5' id="asd" onchange="changeNum(this);" class="range_num" /><span class="changeval">5</span><span class="changeval_text">很好</span></p>
+    <p><span class="changeval_title">质量</span><input type="range" min='0' max='5' step="1" value='5' id="asd" onchange="changeNum(this);" class="range_num" /><span class="changeval">5</span><span class="changeval_text">很好</span></p>
+</div>
+<script>
+function changeNum($this){
+	$val=$($this).val();
+	$($this).parent().find('.changeval').text($val);
+	if($val<2){
+		$val_txet='很差';	
+	}else if($val<4){
+		$val_txet='一般';
+	}else if($val<5){
+		$val_txet='挺好';
+	}else if($val<6){
+		$val_txet='很好';
+	}
+	$($this).parent().find('.changeval_text').text($val_txet);
+}
+</script>
+<div class="line-h"></div>
+<div class="blank20"></div>
+<div class="line-h"></div>
+<div class="shiti_range">
+	<textarea placeholder='亲，简单说几句吧！'></textarea>
+</div>
+<div class="line-h"></div>
+<div class="up_img_all">
+</div>
+<div class="blank10"></div>
+<div class="shiti_range">
+    <a class="add_pic">+添加图片</a>
+</div>
+<div class="blank10"></div>
+<div class="line-h"></div>
+<div class="blank10"></div>
+<input type="submit" value="提交评论" class="tc_infor_price_go" onclick="location.href='pinglun_over.html'" />
+
+<div class="blank10"></div>
+<script>
+	$(function(){
+		$append=' <div class="up_img_ico"><img src="images/test2.png" /><span class="del_img" onclick="del_up_img(this)">删除</span></div>';
+		$('.add_pic').click(function(){
+			$('.up_img_all').append($append);
+		})	
+	})
+	function del_up_img($this){
+		$($this).parent().remove();
+	}
+</script>
+</body>
+</html>

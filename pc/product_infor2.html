@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="css/index.css" rel="stylesheet" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RD9UKnYEdKylLFew8BFuQkks"></script>
+<script language="javascript" type="text/javascript"> 
+function ShowCountDown($classID) 
+{ 
+	$num=$('.'+$classID).length;
+
+	for($i=0;$i<$num;$i++){
+		$enddate=$('.'+$classID).eq($i).find('.enddate').val();
+		var now = new Date();
+		var endDate= new Date(Date.parse($enddate.replace(/-/g,"/")));  
+		var leftTime=endDate.getTime()-now.getTime();
+		if(leftTime>0){
+		
+			var leftsecond = parseInt(leftTime/1000);
+			
+			var day=Math.floor(leftsecond/(60*60*24)); 
+			var hour=Math.floor((leftsecond-day*24*60*60)/3600); 
+			var minute=Math.floor((leftsecond-day*24*60*60-hour*3600)/60); 
+			var second=Math.floor(leftsecond-day*24*60*60-hour*3600-minute*60); ;
+			$('.'+$classID).eq($i).find('.d_day').html(day);
+			$('.'+$classID).eq($i).find('.d_hour').html(hour);
+			$('.'+$classID).eq($i).find('.d_minute').html(minute);
+			$('.'+$classID).eq($i).find('.d_second').html(second);
+		}
+	}
+}
+$(function(){
+	$(".new_help").hover(function(){
+		$(".nh").addClass("new_help_title_").removeClass("new_help_title");
+		$(".help_list").show();
+	},function(){
+		$(".nh").removeClass("new_help_title_").addClass("new_help_title");
+		$(".help_list").hide();
+	})
+	window.setInterval(function(){ShowCountDown('customer_xian');},1000);	
+})
+</script> 
+<title>产品详情2</title>
+</head>
+
+<body>
+<div class="top">
+	<div class="top_main">
+    	<div class="top_left">美丽，从头开始！<a href="login.html">请登录</a><a href="register.html">免费注册</a></div>
+    	<div class="top_right">
+            <div class="new_help">
+            	<p class="new_help_title nh">新手帮助</p>
+                <div class="help_list">
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">关注微信号</a></p>
+                    <p><a href="#">关注新浪微博</a></p>
+                </div>
+            </div>
+            <div class="top_member_center">
+            	<a href="#">会员中心</a>
+                <a href="#">我的收藏</a>
+                <a href="#">我的订单</a>
+                <a href="#">积分兑换</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top_second">
+	<div class="header_logo"><a href="/"><img src="images/logo.png" /></a></div>
+    <div class="search_header">
+    	<p class="search_header_h"><form action="" method="post"><input type="text" value="" class="search_header_input" /><input type="submit" value="搜索" class="search_header_submit"/></form></p>
+        <p class="search_header_c"><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a></p>
+    </div>
+    <div class="pingtai_icon">
+    	<a class="icon_1" href="#">超低折扣</a>
+        <a class="icon_2" href="#">无忧售后</a>
+        <a class="icon_3" href="#">服务保障</a>
+    </div>
+</div>
+
+<div class="top_nav">
+	<div class="top_nav_main">
+    	<a href="index.html" class="no_hover">嗨！</a>
+        <a href="find.html" class="no_hover">寻找美丽</a>
+        <a href="youhuigo.html" class="no_hover">优惠GO</a>
+        <a href="liren.html" class="nav_hover">丽人</a>
+        <a href="xianshi.html" class="no_hover">限时GO</a>
+        <a href="#" class="no_hover">时尚汇</a>
+   		<a href="#" class="no_hover">臭美</a>
+    </div>
+</div>
+
+<div class="content__">
+	<div class="site_weizhi"><a href="#">嗨美</a>>><a href="#">闵行区</a>>><a href="#">有米造型阿萨德</a></div>
+
+	<p class="product_infor_title">有米造型阿萨德</p>
+    <p class="shop_infor_address">仅售178元，最高价值1440元欧莱雅美发2选1！全国连锁，节假日通用！可叠加使用！</p>
+    <div class="blank10"></div>
+    <div class="product_img">
+        <p class="shop_taocan_icon product_icon">
+        <a class="color1">多样套餐</a>
+        <a class="color2">满立减</a>
+        <a class="color3">谁知道呢</a>
+        </p>
+        <img src="images/index_of_0902_10.png" />
+    </div>
+    <div class="product_infor">
+    	<div class="customer_xian">
+        	剩余：<span class="d_day">0</span>天<span class="d_hour">0</span>小时<span class="d_minute">0</span>分<span class="d_second">0</span>秒
+            <input type="hidden" value="2015-09-26 15:20:20" class="enddate" />
+        </div>
+    	<div class="product_infor_top">
+        	<div class="product_infor_top_left">
+            	<p class="dashed_1">折扣6.5折</p>
+                <p class="dashed_1"><i></i>折扣6.5折</p>
+                <p class="dashed_2 product_infor_price"><font size="+1">￥</font>28.5</p>
+                <p class="dashed_2 product_infor_oldprice"><i></i>原价：<del>￥128.5</del></p>
+            </div>
+            <div class="product_infor_top_right">
+            	<table cellpadding="0" cellspacing="0" class="p_pingfen_color" height="110">
+            	<tr>
+                	<td width="65" align="left">服务&nbsp;&nbsp;4.4</td>
+                    <td width="135" align="left"><div class="progress_container"><p class="progress_bar" percent='95%'></p></div></td>
+                    </tr>
+                    <tr>
+                    <td align="left">环境&nbsp;&nbsp;4.6</td>
+                    <td align="left"><div class="progress_container"><p class="progress_bar" percent='85%'></p></div></td>
+                    </tr>
+                    <tr>
+                    <td align="left">质量&nbsp;&nbsp;4.6</td>
+                    <td align="left"><div class="progress_container"><p class="progress_bar" percent='65%'></p></div></td>
+                </tr>
+            </table>
+            <script>
+					$('.progress_bar').each(function(i){
+						var percent = $('.progress_bar').eq(i).attr('percent');
+						$(".progress_bar").eq(i).animate({width:percent},1000);
+					})
+            </script>
+            </div>
+        </div>
+        <div class="product_infor_bottom">
+           <div class="blank10"></div>
+           <div class="dg_num">
+           <a class="dg_num_c">数量：</a>
+           <a class="jiancount num_bg_color"></a>
+           <p class="dg_num_i"><input type="text" value="1" class="dgcount num_bg_color" readonly="readonly"/></p>
+           <a class="jiacount num_bg_color"></a>
+            <script>
+            	$(function(){
+					$('.jiancount,.jiacount').click(function(){
+						alert('对不起，您最多只能抢购1件！');
+					})
+				})
+            </script>
+           </div>
+           <div class="qianggou_bt"><input type="submit" value="" class="qiangou_now" /></div>
+           <div class="qianggou_right">
+               <div class="fenxiang"><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more" id="bds_more">分享</a></div></div>
+               <a href="#" class="shoucang">收藏</a>
+           </div>
+        </div>
+    </div>
+    <div class="blank30"></div>
+    <div class="hr_2"></div>
+    <div class="blank20"></div>
+    <div class="shop_infor_left">
+    	<p class="biaoti_tc">套餐详情<img src="images/jt_tc_bt.png" /></p>
+        <p class="biaoti_tc_hrhr"></p>
+        <div style="height:500px"></div>
+        <p class="biaoti_tc">温馨提醒<img src="images/jt_tc_bt.png" /></p>
+        <p class="biaoti_tc_hrhr"></p>
+    </div>
+    <div class="shop_infor_right">
+    	<table cellpadding="0" cellspacing="0" width="280" class="product_infor_text">
+        	<tr>
+            	<td colspan="2" height="25" class="product_infor_text_title">上海什么什么商家</td>
+            </tr>
+            <tr>
+            	<td width="72" height="30">营业时间：</td>
+                <td>10:00--23:00</td>
+            </tr>
+            <tr>
+            	<td valign="top">商家位置：</td>
+                <td valign="top">上海市闸北区恒通路360号一天下大厦1006室</td>
+            </tr>
+            <tr>
+            	<td colspan="2"><div class="blank10"></div><div id="p_shopmap"></div><a class="big_map" onclick="showDiv('hidden_big_map');">查看地图</a></td>
+            </tr>
+        </table>
+        <script>
+		var map = new BMap.Map("p_shopmap");
+		var point = new BMap.Point(116.427545,40.00796);
+		map.centerAndZoom(point, 14);
+		
+		var myIcon =new BMap.Icon("img/mark.png", new BMap.Size(26,48), {
+		anchor: new BMap.Size(13,48)
+		});
+		var iconMk = new BMap.Marker(point,{icon:myIcon});  //创建标注
+		map.addOverlay(iconMk);    //添加marker到地图上
+		</script>
+        <div class="rigth_tuijian">
+            	<p class="rigth_customer_title2">此商家其他优惠</p>
+                <ul>
+                	<li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li id="noborder"><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+<script>
+function bodyDi(){
+    var w = document.createElement("div");
+    w.setAttribute("id","mybody")
+    with(w.style){
+        position = 'absolute';
+        zIndex = '498';
+        width = Math.max(document.documentElement.scrollWidth, document.documentElement.clientWidth) + "px";
+        height =Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight) + "px";
+        position="absolute";
+        left = '0';
+        top = '0';
+        background = '#333333';
+        filter = 'Alpha(opacity=50)';
+        opacity = '0.5';
+    }
+    document.body.appendChild(w);
+}
+function showDiv(divName){
+	bodyDi();
+	document.getElementById(divName).style.visibility='visible';
+}
+
+function closeDiv(divName){
+	document.getElementById(divName).style.visibility='hidden';
+	document.body.removeChild(document.getElementById("mybody"));	
+}
+</script>
+<div style="visibility: hidden;" id="hidden_big_map">
+	<p class="close_button"><a onclick="closeDiv('hidden_big_map');"></a></p>
+    <div class="blank10"></div>
+   	<div class="big_map_na">
+    	 <p class="big_map_name">时尚发型美发商家<font>(时尚发型美发时尚发型美发商家商家)</font></p>
+         <p class="big_map_address"><span class="liren_icon color1">促</span><span class="liren_icon color2">慧</span><span class="liren_icon color3">限</span></p>
+    </div>
+   
+    <div class="blank10"></div>
+    <div id="p_shopbigmap"></div>
+</div>
+
+<script>
+var bigmap = new BMap.Map("p_shopbigmap");
+bigmap.centerAndZoom(point,16);
+var myIcon =new BMap.Icon("img/mark.png", new BMap.Size(26,48), {
+anchor: new BMap.Size(13,48)
+});
+var iconMk = new BMap.Marker(point,{icon:myIcon});  //创建标注
+bigmap.addOverlay(iconMk); 
+
+var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL}); 
+bigmap.addControl(top_right_navigation);
+</script>
+
+
+<div class="blank20"></div>
+<div class="blank20"></div>
+<div class="footer">
+	<div class="footer_p_icon">
+    	<div class="footer_icon_main">
+        	<div class="footer_icon_main_400">
+            	<p class="blank10"></p>
+            	<p class="font14">全国免费服务热线</p>
+                <p class="font28">400-002-0000</p>
+                <p class="font14">全国免费服务热线</p>
+            </div>
+            <a class="bigicon3 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折扣折折扣扣</span></a>
+            <a class="bigicon2 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折扣扣</span></a>
+            <a class="bigicon1 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折超低扣扣</span></a>
+        </div>
+    </div>
+    <div class="footer_list">
+    	<div class="logo_share">
+        	<p class="logo_share_link"><a href="#"><img src="images/logo.png" /></a></p>
+            <a href="#" class="share_source"><img src="images/kongjian_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/txweibo_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/wechat_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/sina_share.png" /></a>
+            <span class="share_text">分享一下吧</span>
+        </div>
+        <div class="footer_list_item">
+        	<div class="footer_article">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+            <div class="footer_article border_l_r">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+            <div class="footer_article">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+        </div>
+        <div class="wechat">
+        	<div class="wechatinfor">
+            	<p class="wechatinfor_title">官方微信</p>
+                <p><a href="#"><img src="images/index_of_0902_30.png" /></a></p>
+            </div>
+            <div class="wechatinfor">
+            	<p class="wechatinfor_title">官方微信</p>
+                <p><a href="#"><img src="images/index_of_0902_30.png" /></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="blank20"></div>
+    <div class="footer_copy">
+    	<div class="footer_copy_main">
+        	<div class="footer_copy_left">
+            	<a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>
+            </div>
+        	<div class="footer_copy_right">
+            COPYRIGHT&nbsp;&nbsp;&copy;2015&nbsp;&nbsp;&nbsp;&nbsp;haimei.com&nbsp;&nbsp;&nbsp;&nbsp沪ICP备214587410-1&nbsp;&nbsp;&nbsp;&nbsp上海朗语网络信息科技有限公司
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+		
+
+</body>
+</html>

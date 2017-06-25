@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="css/register.css" rel="stylesheet" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/placeholder.js"></script>
+<script>
+function checkInput(){
+	$mobile=$('#mobile').val();	
+	$yzcode=$('#yzcode').val();	
+	$password=$('#password').val();	
+	var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(14[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if((!myreg.test($mobile) && !filter.test($mobile)) || $mobile==''){
+		alert('请正确输入手机号或您的邮箱！');
+		return false;	
+	}
+	if($yzcode.length!=4){
+		alert('请正确输入验证码！');
+		return false;		
+	}
+	
+	return true;
+}
+</script>
+<title>找回密码</title>
+</head>
+
+<body>
+<div class="top_second_all">
+    <div class="top_second">
+        <div class="header_logo"><a href="/"><img src="images/logo.png" /></a></div>
+        <div class="pingtai_icon">
+            <a class="icon_1" href="#">超低折扣</a>
+            <a class="icon_2" href="#">无忧售后</a>
+            <a class="icon_3" href="#">服务保障</a>
+        </div>
+    </div>
+</div>
+<div class="main_register" style="display:none">
+	<div class="findpwd_main">
+		<p class="findpwd_title">找回密码</p>
+        <div class="blank30"></div>
+        <form method="post" action="" onsubmit="return checkInput()">
+        <p><input type="text" class="reg_input" placeholder='注册邮箱/手机号' id="mobile" /></p>
+        <div class="blank30"></div>
+        <p><input type="text" class="reg_input2" placeholder='验证码' id="yzcode" /> <img src="images/big_icon2.png" class="img_yzcode" onclick="" /></p>
+        <div class="blank30"></div>
+        <input type="submit" value="下一步" class="next_buzhou" />
+        </form>
+    </div>
+</div>
+<div class="main_register" style="display:none">
+	<div class="findpwd_main">
+		<p class="findpwd_title">找回密码</p>
+        <div class="left_findpwd">
+            <p class="left_findpwd_p1">邮件已发送</p>
+            <p class="left_findpwd_p2">请您到<font>7875***478@qq.com</font>查阅来自嗨美的邮件，<br />点击邮件中链接，重置您的登录密码！</p>
+            <p class="left_findpwd_p3"><input type="button" value="去邮箱收信" class="next_buzhou" /></p>
+        </div>
+        <div class="right_findpwd">
+        	<p class="right_findpwd_p1">没有收到邮件？</p>
+            <p class="right_findpwd_p2">请先检查是否在垃圾邮件中，如果还未收到，请重新发送邮件</p>
+            <p class="right_findpwd_p3"><input type="button" value="重新发送邮件" class="sendemail"  /></p>
+            <p class="right_findpwd_p2">还是没有收到？请选择<a href="#">其他找回方式</a></p>
+        </div>
+    </div>
+</div>
+<div class="main_register" style="display:none">
+	<div class="findpwd_main">
+		<p class="findpwd_title">找回密码</p>
+        <div class="left_findpwd2">
+            <p class="left_findpwd2_p1">您绑定的手机号<font>131****0850</font>短信已发送，请查收</p>
+            <p class="left_findpwd2_p2">短信动态码<input type="text" placeholder='动态码' /></p>
+            <p class="left_findpwd2_p3"><input type="button" value="下一步" class="next_buzhou" /></p>
+        </div>
+        <div class="right_findpwd">
+        	<p class="right_findpwd_p1">没有收到短信动态码？</p>
+            <p class="right_findpwd_p2">请先检查是否被拦截，如果还未收到，请重新发送</p>
+            <p class="right_findpwd_p3"><input type="button" value="重新发送动态码" class="sendcode" /></p>
+            <p class="right_findpwd_p2">还是没有收到？请选择<a href="#">其他找回方式</a></p>
+        </div>
+    </div>
+</div>
+<div class="main_register" style="display:none">
+	<div class="findpwd_main">
+		<p class="findpwd_title">找回密码</p>
+            <p class="left_findpwd3_p1">您的邮箱地址<font>131****0850</font></p>
+            <p class="left_findpwd3_p2">新的登录密码<input type="password" placeholder='密码' /></p>
+            <p class="left_findpwd3_p2">确认登录密码<input type="password" placeholder='确认密码' /></p>
+            <p class="left_findpwd3_p3"><input type="submit" value="重置密码" class="next_buzhou" /></p>
+      
+    </div>
+</div>
+<div class="main_register">
+	<div class="findpwd_main">
+		<p class="findpwd_title">找回密码</p>
+        <p class="findpwd_sucess">新密码设置已完成，<a href="#">去登陆</a></p>
+      
+    </div>
+</div>
+<script>
+$(function(){
+	$sendok=false; $timeout=0;
+	$('.sendcode,.sendemail').click(function(){
+		$sendok=true;
+		$classname=$(this).attr('class');
+		if($sendok && $timeout==0){
+			$(this).attr('disabled','disabled');
+			$('.'+$classname).val('59秒后重新发送');
+			$('.'+$classname).css('color','#b3b2b2');
+			$timeout=59;
+			$sendtime=setInterval(function(){
+				$timeout=$timeout-1;
+				if($timeout>=1){
+					$('.'+$classname).val($timeout+'秒后重新发送');
+				}else{
+					clearInterval($sendtime);
+					$('.'+$classname).css('color','#fff');
+					if($classname=='sendcode'){
+						$('.'+$classname).val('重新发送动态码');
+					}else{
+						$('.'+$classname).val('重新发送邮件');	
+					}
+					$('.'+$classname).attr('disabled',false);
+				}
+			},1000);
+		}	
+	})	
+})
+</script>
+<div class="simple_footer">
+<br />嗨美网 www.himei.wang 上海朗语网络信息科技有限公司<br />沪ICP备451278-1<br /><br />
+</div>
+</body>
+</html>

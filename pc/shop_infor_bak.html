@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="css/index.css" rel="stylesheet" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RD9UKnYEdKylLFew8BFuQkks"></script>
+<script type="text/javascript" src="huanstyle/html5.js"></script>
+<script type="text/javascript" src="huanstyle/excanvas.js"></script>
+<script type="text/javascript" src="huanstyle/jquery.easy-pie-chart.js"></script>
+<link rel="stylesheet" type="text/css" href="huanstyle/jquery.easy-pie-chart.css" media="screen">
+<script type="text/javascript">
+ /*   $(function(){
+        $(window).scroll(function(){
+            $offset = $('.shop_link_out').offset();
+            if($(window).scrollTop()>$offset.top){
+                $('.shop_link').css({
+                'position':'fixed',
+                'top':'0px',
+                'left':$offset.left+'px',
+                'z-index':'999'
+                });    
+            }else{
+                $('.shop_link').removeAttr('style');
+            }
+        });
+    })*/
+</script>
+<script>
+	function initPieChart(){
+		$('.percentage').easyPieChart({
+			barColor:'#e83968',		//滚动条颜色
+			trackColor: '#dddddd',		//底色
+			scaleColor: false,		//分割线
+			lineWidth: 4,			//滚动条宽度
+			lineCap: 'butt',		//线条末端圆滑
+			size: 74,				//环形大小
+			animate: 500			//动画时长
+		});
+	}
+$(function(){
+	initPieChart();
+	$(".new_help").hover(function(){
+		$(".nh").addClass("new_help_title_").removeClass("new_help_title");
+		$(".help_list").show();
+	},function(){
+		$(".nh").removeClass("new_help_title_").addClass("new_help_title");
+		$(".help_list").hide();
+	})
+})
+</script>
+<title>店铺详情</title>
+</head>
+
+<body>
+<div class="top">
+	<div class="top_main">
+    	<div class="top_left">美丽，从头开始！<a href="#">请登录</a><a href="#">免费注册</a></div>
+    	<div class="top_right">
+            <div class="new_help">
+            	<p class="new_help_title nh">新手帮助</p>
+                <div class="help_list">
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">新手帮助</a></p>
+                    <p><a href="#">关注微信号</a></p>
+                    <p><a href="#">关注新浪微博</a></p>
+                </div>
+            </div>
+            <div class="top_member_center">
+            	<a href="#">会员中心</a>
+                <a href="#">我的收藏</a>
+                <a href="#">我的订单</a>
+                <a href="#">积分兑换</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top_second">
+	<div class="header_logo"><a href="/"><img src="images/logo.png" /></a></div>
+    <div class="search_header">
+    	<p class="search_header_h"><form action="" method="post"><input type="text" value="" class="search_header_input" /><input type="submit" value="搜索" class="search_header_submit"/></form></p>
+        <p class="search_header_c"><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a><span>|</span><a href="#">美发店</a></p>
+    </div>
+    <div class="pingtai_icon">
+    	<a class="icon_1" href="#">超低折扣</a>
+        <a class="icon_2" href="#">无忧售后</a>
+        <a class="icon_3" href="#">服务保障</a>
+    </div>
+</div>
+
+<div class="top_nav">
+	<div class="top_nav_main">
+    	<a href="#" class="nav_hover">嗨！</a>
+        <a href="#" class="no_hover">寻找美丽</a>
+        <a href="#" class="no_hover">优惠GO</a>
+        <a href="#" class="no_hover">丽人</a>
+        <a href="#" class="no_hover">限时GO</a>
+        <a href="#" class="no_hover">时尚汇</a>
+   		<a href="#" class="no_hover">臭美</a>
+    </div>
+</div>
+<div class="content__">
+	<div class="site_weizhi"><a href="#">嗨美</a>>><a href="#">闵行区</a>>><a href="#">有米造型阿萨德</a></div>
+
+	<p class="shop_infor_title">有米造型阿萨德</p>
+    <p class="shop_infor_address">详细地址：上海市闸北区恒通路360号一天下大厦22楼C09</p>
+    
+   
+    <div class="shop_infor_pic">
+    	<p class="shop_infor_pic_count"><a href="#">共有456张图片</a></p>
+    	<ul>
+         <!--九张图片-->
+        	<li class="shop_infor_pic91"><a href="#"><img src="images/index_of_0902_10.png" class="iio"/></a></li>
+            <li class="shop_infor_pic92"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic93"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic94"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic95"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic96"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic97"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic98"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic99"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+         <!--九张图片结束-->
+         <!--七张图片-->
+        	<!--<li class="shop_infor_pic71"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic72"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic73"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic74"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic75"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic76"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>
+            <li class="shop_infor_pic77"><a href="#"><img src="images/index_of_0902_10.png" /></a></li>-->
+         <!--七张图片结束-->
+        </ul>
+        <script>
+		
+        $(".shop_infor_pic li").each(function(i){  
+			/*$('.shop_infor_pic li').eq(i).find('img').load(function(){*/
+				$k_width=parseInt($('.shop_infor_pic li').eq(i).width());
+				$k_height=parseInt($('.shop_infor_pic li').eq(i).height());
+				$img_width=parseInt($('.shop_infor_pic li').eq(i).find('img').width());
+				$img_height=parseInt($('.shop_infor_pic li').eq(i).find('img').height());
+				if(($k_width/$k_height)>($img_width/$img_height)){
+					$img_width_now='100%';
+					$('.shop_infor_pic li').eq(i).find('img').width($img_width_now);
+					$img_height=parseInt($('.shop_infor_pic li').eq(i).find('img').height());
+					$margin=($k_height-$img_height)/2;
+					$('.shop_infor_pic li').eq(i).find('img').css("marginTop",$margin);
+				}else{
+					$img_height_now='100%';
+					$('.shop_infor_pic li').eq(i).find('img').height($img_height_now);
+					$img_width=parseInt($('.shop_infor_pic li').eq(i).find('img').width());
+					$margin=($k_width-$img_width)/2;
+					$('.shop_infor_pic li').eq(i).find('img').css("marginLeft",$margin);
+				}
+			/*})*/
+			//alert($(this).find('img').attr('src'));
+				
+				
+		})
+        </script>
+    </div>
+    <div class="shop_infor_canshu">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100" align="center" height="110">
+                <div class="percentage easyPieChart" data-percent="85" style="width:74px; height: 74px;"><p class="baifen_1">85%</p><span class="baifen_2">环境</span><canvas width="74" height="74"></canvas></div>
+                </td>
+                <td width="100" align="center">
+                <div class="percentage easyPieChart" data-percent="95" style="width:74px; height: 74px;"><p class="baifen_1">95%</p><span class="baifen_2">质量</span><canvas width="74" height="74"></canvas></div>
+                </td>
+                <td width="100" align="center">
+                <div class="percentage easyPieChart" data-percent="99" style="width:74px; height: 74px;"><p class="baifen_1">99%</p><span class="baifen_2">服务</span><canvas width="74" height="74"></canvas></div>
+                </td>
+            </tr>
+        </table>
+        <div class="blank10"></div>
+    	<div class="b_bottom1" style="padding-top:7px; height:26px"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div></div>
+        <div class="b_bottom2">口碑：5644</div>
+        <div class="b_bottom1">销量：3000</div>
+        <div class="b_bottom2"><a href="#">4524封点评</a></div>
+        <div class="iconand_share">
+        <div class="blank10"></div><div class="blank10"></div>
+        	<div style="float:left"><span class="liren_icon color1">促</span><span class="liren_icon color2">慧</span><span class="liren_icon color3">限</span></div>
+            <div class="fenxiang"><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more" id="bds_more">分享</a></div></div>
+            <a href="#" class="shoucang">收藏</a>
+        </div>
+    </div>
+    <div class="blank30"></div>
+    <div class="hr_2"></div>
+    <div class="blank30"></div>
+    <div class="shop_infor_left">
+    	<div class="shop_link_out">
+            <div class="shop_link">
+                <p><a href="#" class="link_hover">优惠</a></p>
+                <p><a href="#map" class="link_nohover">位置</a></p>
+                <p><a href="#jianjie" class="link_nohover">简介</a></p>
+                <p><a href="#dianping" class="link_nohover">点评</a></p>
+            </div>
+        </div>
+        <ul class="shop_taocan_list">
+       		 <li>
+                <table cellpadding="0" cellspacing="0" width="900">
+                    <tr>
+                        <td width="200" rowspan="3" height="90"><a href="#" title=""><img src="images/index_of_0902_10.png" height="90" /></a></td>
+                        <td width="325" height="24"><a href="#" class="shop_taocan_list_title">这个是什么什么什么什么什么什么什么套餐...</a></td>
+                        <td width="275" align="left"><span class="shop_taocan_list_jiezhi">截止到：2015-02-01 12:00:00</span></td>
+                        <td width="100" rowspan="2" align="left"><a href="#"><img src="images/ljdg_go.png" /></a></td>
+                    </tr>
+                    <tr>
+                        <td width="325" height="38"><span class="shop_taocan_list_yishou">已售6666个</span></td>
+                        <td align="left" class="shop_taocan_icon">
+                        <a class="color1">多样套餐</a>
+                        <a class="color2">满立减</a>
+                        <a class="color3">谁知道呢</a>
+                        </td>
+                    </tr>
+                    <tr>
+                       <td colspan="3"><span class="shop_tc_price"><font color="#999" size="-1">￥</font>288</span><span class="shop_tc_oldprice">原价：<del>￥255</del></span></td>
+                    </tr>
+                </table>
+			</li>
+             <li>
+                <table cellpadding="0" cellspacing="0" width="900">
+                    <tr>
+                        <td width="200" rowspan="3" height="90"><a href="#" title=""><img src="images/index_of_0902_10.png" height="90" /></a></td>
+                        <td width="325" height="24"><a href="#" class="shop_taocan_list_title">这个是什么什么什么什么什么什么什么套餐...</a></td>
+                        <td width="275" align="left"><span class="shop_taocan_list_jiezhi">限购：5个</span><span class="shop_tc_oldprice">剩余：12个</span></td>
+                        <td width="100" rowspan="2" align="left"><a href="#"><img src="images/ljdg_go.png" /></a></td>
+                    </tr>
+                    <tr>
+                        <td width="325" height="38"><span class="shop_taocan_list_yishou">已售6666个</span></td>
+                        <td align="left" class="shop_taocan_icon">
+                        <a class="color1">多样套餐</a>
+                        <a class="color2">满立减</a>
+                        <a class="color3">谁知道呢</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><span class="shop_tc_price"><font color="#999" size="-1">￥</font>288</span><span class="shop_tc_oldprice">原价：<del>￥255</del></span></td>
+                    </tr>
+                </table>
+			</li>
+            <li>
+                <table cellpadding="0" cellspacing="0" width="900">
+                    <tr>
+                        <td width="200" rowspan="3" height="90"><a href="#" title=""><img src="images/index_of_0902_10.png" height="90" /></a></td>
+                        <td width="325" height="24"><a href="#" class="shop_taocan_list_title">这个是什么什么什么什么什么什么什么套餐...</a></td>
+                        <td width="275" align="left"></td>
+                        <td width="100" rowspan="2" align="left"><a href="#"><img src="images/ljdg_go.png" /></a></td>
+                    </tr>
+                    <tr>
+                        <td width="325" height="38"><span class="shop_taocan_list_yishou">已售6666个</span></td>
+                        <td align="left" class="shop_taocan_icon">
+                        <a class="color1">多样套餐</a>
+                        <a class="color2">满立减</a>
+                        <a class="color3">谁知道呢</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><span class="shop_tc_price"><font color="#999" size="-1">￥</font>288</span><span class="shop_tc_oldprice">原价：<del>￥255</del></span></td>
+                    </tr>
+                </table>
+			</li>
+            <li style="display:none">
+                <table cellpadding="0" cellspacing="0" width="900">
+                    <tr>
+                        <td width="200" rowspan="3" height="90"><a href="#" title=""><img src="images/index_of_0902_10.png" height="90" /></a></td>
+                        <td width="325" height="24"><a href="#" class="shop_taocan_list_title">这个是什么什么什么什么什么什么什么套餐...</a></td>
+                        <td width="275" align="left"></td>
+                        <td width="100" rowspan="2" align="left"><a href="#"><img src="images/ljdg_go.png" /></a></td>
+                    </tr>
+                    <tr>
+                        <td width="325" height="38"><span class="shop_taocan_list_yishou">已售6666个</span></td>
+                        <td align="left" class="shop_taocan_icon">
+                        <a class="color1">多样套餐</a>
+                        <a class="color2">满立减</a>
+                        <a class="color3">谁知道呢</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><span class="shop_tc_price"><font color="#999" size="-1">￥</font>288</span><span class="shop_tc_oldprice">原价：<del>￥255</del></span></td>
+                    </tr>
+                </table>
+			</li>
+            <li style="display:none">
+                <table cellpadding="0" cellspacing="0" width="900">
+                    <tr>
+                        <td width="200" rowspan="3" height="90"><a href="#" title=""><img src="images/index_of_0902_10.png" height="90" /></a></td>
+                        <td width="325" height="24"><a href="#" class="shop_taocan_list_title">这个是什么什么什么什么什么什么什么套餐...</a></td>
+                        <td width="275" align="left"></td>
+                        <td width="100" rowspan="2" align="left"><a href="#"><img src="images/ljdg_go.png" /></a></td>
+                    </tr>
+                    <tr>
+                        <td width="325" height="38"><span class="shop_taocan_list_yishou">已售6666个</span></td>
+                        <td align="left" class="shop_taocan_icon">
+                        <a class="color1">多样套餐</a>
+                        <a class="color2">满立减</a>
+                        <a class="color3">谁知道呢</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><span class="shop_tc_price"><font color="#999" size="-1">￥</font>288</span><span class="shop_tc_oldprice">原价：<del>￥255</del></span></td>
+                    </tr>
+                </table>
+			</li>
+            
+      </ul>
+      <div class="z_s_tc">
+         <a class="tc_zhankai" href="javascript:showdisplay(3);"><span>展开剩余2个<img src="images/tc_down.png"/></span><span style="display:none">收起<img src="images/tc_up.png"/></span></a>
+      </div>
+	  <script>
+          function showdisplay($num){
+              $shop_taocan_list_length=$('.shop_taocan_list li').length;
+			  if($shop_taocan_list_length>$num){
+				$isdisplay=$('.shop_taocan_list li').eq($num).css('display');
+				
+				if($isdisplay=='none'){		//展开剩余
+					$('.shop_taocan_list li').show();	
+					$('.tc_zhankai span').eq(0).hide();
+					$('.tc_zhankai span').eq(1).show();
+				}else{		//只展开前$num个
+					for($i=$num;$i<$shop_taocan_list_length;$i++){
+						$isdisplay=$('.shop_taocan_list li').eq($i).hide();
+					}
+					$('.tc_zhankai span').eq(1).hide();
+					$('.tc_zhankai span').eq(0).show();
+				}
+				
+			  }
+          }
+      </script>
+            
+        <div class="blank40"></div>
+        <div class="biaoti_infor_t">
+        	<p class="biaoti_infor_text" id="map"><span class="biaoti_infor_text_cn">商家位置</span><span class="biaoti_infor_text_en">MAP</span></p>
+        	<p class="biaoti_infor_bg"></p>
+        </div>
+        <div class="blank10"></div>
+        <!--<ul class="shop_img_list">
+        	<li>
+            	<p class="shop_img_list_img"><a href="#"><img src="images/index_of_0902.png" /></a></p>
+            	<p class="shop_img_list_title"><a href="#">美联社&美丽频道造型</a></p>
+            </li>
+            <li>
+            	<p class="shop_img_list_img"><a href="#"><img src="images/index_of_0902.png" /></a></p>
+            	<p class="shop_img_list_title"><a href="#">美联社&美丽频道造型</a></p>
+            </li>
+            <li>
+            	<p class="shop_img_list_img"><a href="#"><img src="images/index_of_0902.png" /></a></p>
+            	<p class="shop_img_list_title"><a href="#">美联社&美丽频道造型</a></p>
+            </li>
+            <li style="margin-right:0">
+            	<p class="shop_img_list_img"><a href="#"><img src="images/ljdg_go.png" /></a></p>
+            	<p class="shop_img_list_title"><a href="#">美联社&美丽频道造型</a></p>
+            </li>
+            <li>
+            	<p class="shop_img_list_img"><a href="#"><img src="images/index_of_0902_10.png" /></a></p>
+            	<p class="shop_img_list_title"><a href="#">美联社&美丽频道造型</a></p>
+            </li>
+            <li>
+            	<p class="shop_img_list_img"><a href="#"><img src="images/index_of_0902.png" /></a></p>
+            	<p class="shop_img_list_title"><a href="#">美联社&美丽频道造型</a></p>
+            </li>
+            <li>
+            	<p class="shop_img_list_img"><a href="#"><img src="images/index_of_0902.png" /></a></p>
+            	<p class="shop_img_list_title"><a href="#">美联社&美丽频道造型</a></p>
+            </li>
+            <li style="margin-right:0">
+            	<p class="shop_img_list_img"><a href="#"><img src="images/index_of_0902.png" /></a></p>
+            	<p class="shop_img_list_title"><a href="#">美联社&美丽频道造型</a></p>
+            </li>
+        </ul>-->
+        
+        <div id="shopmap"></div>
+        <div class="blank40"></div>
+        <script>
+		$(function(){
+			mapSearch();
+		})
+		function mapSearch(){
+		var map = new BMap.Map("shopmap");
+		var point = new BMap.Point(116.404,39.915);
+		map.centerAndZoom(point, 15);
+	
+		var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL}); 
+		map.addControl(top_right_navigation);
+	
+		var points = [
+		new BMap.Point(116.411776,39.942833),
+		new BMap.Point(116.320791,40.003682),
+		new BMap.Point(116.275186,39.896095),
+		new BMap.Point(116.425098,39.946249),
+		new BMap.Point(116.359823,39.984761),
+		new BMap.Point(116.316479,39.98323),
+		new BMap.Point(116.385986,39.946124),
+		new BMap.Point(116.427545,40.00796),
+		new BMap.Point(116.446965,39.911603),
+		new BMap.Point(116.454579,39.946652)];
+	
+		for(var i=0;i<points.length;i++){
+			var myIcon =new BMap.Icon("img/mark.png", new BMap.Size(26,48), {
+			anchor: new BMap.Size(13,48),
+			infoWindowAnchor: new BMap.Size(13,24)
+			});
+			var iconMk = new BMap.Marker(points[i],{icon:myIcon});  //创建标注
+			map.addOverlay(iconMk);    //添加marker到地图上
+			
+			var opts = {
+			  width : 230,     // 信息窗口宽度
+			  height: 280,     // 信息窗口高度
+			  title : '<a href="#"><img src="./images/index_of_0902_10.png" width="230" height="160" /></a><p class="h_map_title"><a href="#">啊实打实扩大了盛开的</a></p>'
+			}
+			var sinfor='<div class="h_ct"><div class="pingfen1_all"><img src="images/damuzhi_bg.png"  style="position:absolute"/><p style="width:90%"></p></div><div class="pingfen1_score">4.5 分</div><div class="pingfen1_all_fr"><span class="liren_icon color1">促</span><span class="liren_icon color2">慧</span><span class="liren_icon color3" style="margin-right:0">限</span></div></div><div class="blank10"></div><p class="h_map_address">上海市闸北区红通路360号一天下大厦22楼C09</p><div class="h_map_infor"><font color="#666">567人购买</font><span class="fr_infor">￥<font size="+2" color="#ff346d">567</font>元起</span></div>';
+
+			var infoWindow =new BMap.InfoWindow(sinfor, opts);
+			iconMk.addEventListener("mouseover", function(){this.openInfoWindow(infoWindow);});
+		}
+		map.setViewport(points);
+	}
+	</script>
+        <script>
+			$('.shop_img_list li').each(function(i){
+				/*$('.shop_img_list li').eq(i).find('img').load(function(){
+					$k_width=parseInt($('.shop_img_list li').eq(i).find('img').width());
+					$k_height=parseInt($('.shop_img_list li').eq(i).find('img').height());
+					if($k_width>$k_height){
+						$k_now=208;
+						$h_now=parseInt($k_height/($k_width/$k_now));
+						$m_top=(208-$h_now)/2;
+						$('.shop_img_list li').eq(i).find('img').width($k_now);
+						$('.shop_img_list li').eq(i).find('img').css('margin-top',$m_top);
+					}else{
+						$h_now=208;
+						$('.shop_img_list li').eq(i).find('img').height($h_now);
+					}
+				})*/
+				
+			})
+        </script>
+        
+        
+        
+        <div class="blank30"></div>
+        <div class="biaoti_infor_t">
+        	<p class="biaoti_infor_text" id="jianjie"><span class="biaoti_infor_text_cn">商家简介</span><span class="biaoti_infor_text_en">BUSINESS</span></p>
+        	<p class="biaoti_infor_bg"></p>
+        </div>
+        <div class="blank10"></div>
+       	<p class="business_infor">思密达专业烫染沙龙是一家韩系风格的美发沙龙，沙龙主创人员由3名沪上知名发型师共同携手创建，沙龙每位成员都追求给顾客提供专业的技术和贴心的服务，致力于把韩国新时尚元素和上海的文化环境相结合，打造出无需特别打理发型就能让顾客拥有精致、漂亮、有型的时尚形象，使人的自信心由然而生，特邀你一起分享体验，感受时尚发型的魅力，共享视觉潮流之旅。小黑（最左），03年从事美发行业，担任日本丝艺学校资深创意总监多年。对于时尚发型有自己独特的见解。如果你不知什么发型适合你，就去找他。刘佳（中间），学习英国沙宣。在上海多家高端专业店任技术总监、做发型认真、细心。善于将发型做到时尚又便于打理。 阿简（最右），从事美发十五年，先后学习沙宣、日本丝艺，在上海多家高端发廊担任店长、总监。善于发型经典剪裁和日常发型打造。
+        </p>
+        
+    
+        
+        <div class="blank30"></div>
+        <div class="blank20"></div>
+    	<div class="biaoti_infor_t">
+        	<p class="biaoti_infor_text" id="dianping"><span class="biaoti_infor_text_cn">消费评价</span><span class="biaoti_infor_text_en">COMMENTS</span></p>
+        	<p class="biaoti_infor_bg"></p>
+        </div>
+        <div class="blank40"></div>
+        <div class="p_pingfen">
+        	<table cellpadding="0" cellspacing="0" class="p_pingfen_color">
+            	<tr>
+                	<td width="50" align="left">服务&nbsp;&nbsp;4.4</td>
+                    <td width="175" align="left"><div class="progress_container"><p class="progress_bar" percent='95%'></p></div></td>
+                    <td width="50" align="left">环境&nbsp;&nbsp;4.6</td>
+                    <td width="175" align="left"><div class="progress_container"><p class="progress_bar" percent='85%'></p></div></td>
+                    <td width="50" align="left">质量&nbsp;&nbsp;4.6</td>
+                    <td width="185" align="left"><div class="progress_container"><p class="progress_bar" percent='65%'></p></div></td>
+                    <td width="210" align="center"><a href="#" class="pinglun_go"></a></td>
+                </tr>
+            </table>
+            <script>
+					$('.progress_bar').each(function(i){
+						var percent = $('.progress_bar').eq(i).attr('percent');
+						$(".progress_bar").eq(i).animate({width:percent},1000);
+					})
+            </script>
+        </div>
+        <div class="blank30"></div>
+        <div class="pinglun_num">
+        	<a href="#" class="pinglun_a_hover">全部10</a><a href="#" class="pinglun_a">有图片5</a>
+        </div>
+        <script>
+        $(function(){
+			$('.pl_infor_content_pic a').click(function(){
+				$('.pl_infor_content_pic a').removeClass('border_c');
+				$(this).addClass('border_c');
+				$(this).parent().next().find('img').attr('src',$(this).find('img').attr('src'));
+				$(this).parent().next().css('display','inline-block');
+			})	
+			$('.pl_infor_content_pic_big').click(function(){
+				$('.pl_infor_content_pic a').removeClass('border_c');
+				$(this).hide();	
+			})
+		})
+        </script>
+        <ul class="pinglun_list">
+        	<li>
+            	<div class="left_member_img">
+                <a></a><img src="images/pinglun_go.png"/>孙**生
+                </div>
+                <div class="right_member_pl_infor">
+                    <p class="pl_infor_score"><span>服务&nbsp;5分</span><span>环境&nbsp;5分</span><span>质量&nbsp;5分</span></p>
+                    <div class="pl_infor_content"><p>是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分</p>                
+                        <p class="pl_infor_content_pic"><a class="border_b"><img src="images/pinglun_go.png" /></a><a class="border_b"><img src="images/lajitong.png" /></a><a class="border_b"><img src="images/index_of_0902.png" /></a><a class="border_b"><img src="images/index_of_0902_10.png" /></a></p>
+                        
+                        <p class="pl_infor_content_pic_big"><img src="images/pinglun_go.png" /></p>
+                    </div>
+                    <p class="right_me"><span>2015-05-41 10:12:10</span><a href="#">对我有用(0)</a></p>
+                </div>
+            </li>
+            <li>
+            	<div class="left_member_img">
+                <a></a><img src="images/pinglun_go.png"/>孙**生
+                </div>
+                <div class="right_member_pl_infor">
+                    <p class="pl_infor_score"><span>服务&nbsp;5分</span><span>环境&nbsp;5分</span><span>质量&nbsp;5分</span></p>
+                    <div class="pl_infor_content"><p>是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的</p>
+                    </div>
+                    <p class="right_me"><span>2015-05-41 10:12:10</span><a href="#">对我有用(0)</a></p>
+                </div>
+            </li>
+           <li>
+            	<div class="left_member_img">
+                <a></a><img src="images/pinglun_go.png"/>孙**生
+                </div>
+                <div class="right_member_pl_infor">
+                    <p class="pl_infor_score"><span>服务&nbsp;5分</span><span>环境&nbsp;5分</span><span>质量&nbsp;5分</span></p>
+                    <div class="pl_infor_content"><p>是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分</p>                
+                        <p class="pl_infor_content_pic"><a class="border_b"><img src="images/pinglun_go.png" /></a><a class="border_b"><img src="images/lajitong.png" /></a><a class="border_b"><img src="images/index_of_0902.png" /></a><a class="border_b"><img src="images/index_of_0902_10.png" /></a></p>
+                        
+                        <p class="pl_infor_content_pic_big"><img src="images/pinglun_go.png" /></p>
+                    </div>
+                    <p class="right_me"><span>2015-05-41 10:12:10</span><a href="#">对我有用(0)</a></p>
+                </div>
+            </li>
+            <li>
+            	<div class="left_member_img">
+                <a></a><img src="images/pinglun_go.png"/>孙**生
+                </div>
+                <div class="right_member_pl_infor">
+                    <p class="pl_infor_score"><span>服务&nbsp;5分</span><span>环境&nbsp;5分</span><span>质量&nbsp;5分</span></p>
+                    <div class="pl_infor_content"><p>是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分</p>
+                    </div>
+                    <p class="right_me"><span>2015-05-41 10:12:10</span><a href="#">对我有用(0)</a></p>
+                </div>
+            </li>
+            <li>
+            	<div class="left_member_img">
+                <a></a><img src="images/pinglun_go.png"/>孙**生
+                </div>
+                <div class="right_member_pl_infor">
+                    <p class="pl_infor_score"><span>服务&nbsp;5分</span><span>环境&nbsp;5分</span><span>质量&nbsp;5分</span></p>
+                    <div class="pl_infor_content"><p>是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分，是的发生的丰盛的分实得分实得分</p>
+                    </div>
+                    <p class="right_me"><span>2015-05-41 10:12:10</span><a href="#">对我有用(0)</a></p>
+                </div>
+            </li>
+        </ul>
+        <div class="blank20"></div>
+        <div class="setpage">
+        	<span>共找到73条</span>
+        	<a href="#" class="paddlr">上一页</a>
+			<a id="hover_page">1</a>
+            <a href="#">2</a>
+            <a href="#" class="paddlr">下一页</a>
+       	</div>
+    </div>
+    <div class="shop_infor_right">
+    	<div class="shop_logo">
+        	<img src="images/index_of_0902.png" width="280" />
+            <p class="shop_yingye_time">营业时间：10:00--12:45</p>
+        </div>
+       <!-- <div class="rigth_tuijian">
+            	<p class="rigth_customer_title">不容错过</p>
+                <ul>
+                	<li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li id="change_tuijian"><a href="#">换一换</a></li>
+                </ul>
+            </div>-->
+        <div class="rigth_tuijian">
+            	<p class="rigth_customer_title2">浏览记录</p>
+                <ul>
+                	<li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li id="noborder"><a href="#"><img src="images/sm1.png" /></a><a href="#">时尚发型美发商家</a><br /><span class="price_pt">￥189</span><span class="price_md">门店价<del>189</del></span></li>
+                    <li id="qingkong"><a href="#">清空</a></li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+<div class="blank30"></div>
+<div class="footer">
+	<div class="footer_p_icon">
+    	<div class="footer_icon_main">
+        	<div class="footer_icon_main_400">
+            	<p class="blank10"></p>
+            	<p class="font14">全国免费服务热线</p>
+                <p class="font28">400-002-0000</p>
+                <p class="font14">全国免费服务热线</p>
+            </div>
+            <a class="bigicon3 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折扣折折扣扣</span></a>
+            <a class="bigicon2 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折扣扣</span></a>
+            <a class="bigicon1 bigicon" href="#"><span class="font18">超低折扣</span><br /><span class="color5">超低折超低折超低扣扣</span></a>
+        </div>
+    </div>
+    <div class="footer_list">
+    	<div class="logo_share">
+        	<p class="logo_share_link"><a href="#"><img src="images/logo.png" /></a></p>
+            <a href="#" class="share_source"><img src="images/kongjian_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/txweibo_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/wechat_share.png" /></a>
+            <a href="#" class="share_source"><img src="images/sina_share.png" /></a>
+            <span class="share_text">分享一下吧</span>
+        </div>
+        <div class="footer_list_item">
+        	<div class="footer_article">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+            <div class="footer_article border_l_r">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+            <div class="footer_article">
+            	<p class="footer_article_b">新手指南</p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+                <p class="footer_article_t"><a href="#">新手指南</a></p>
+            </div>
+        </div>
+        <div class="wechat">
+        	<div class="wechatinfor">
+            	<p class="wechatinfor_title">官方微信</p>
+                <p><a href="#"><img src="images/index_of_0902_30.png" /></a></p>
+            </div>
+            <div class="wechatinfor">
+            	<p class="wechatinfor_title">官方微信</p>
+                <p><a href="#"><img src="images/index_of_0902_30.png" /></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="blank20"></div>
+    <div class="footer_copy">
+    	<div class="footer_copy_main">
+        	<div class="footer_copy_left">
+            	<a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>|
+                <a href="#">关于嗨美</a>
+            </div>
+        	<div class="footer_copy_right">
+            COPYRIGHT&nbsp;&nbsp;&copy;2015&nbsp;&nbsp;&nbsp;&nbsp;haimei.com&nbsp;&nbsp;&nbsp;&nbsp沪ICP备214587410-1&nbsp;&nbsp;&nbsp;&nbsp上海朗语网络信息科技有限公司
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+        
+        
+        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+		</script>
+		
+		
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="huanstyle/html5.js"></script>
+<script type="text/javascript" src="huanstyle/excanvas.js"></script>
+<script type="text/javascript" src="huanstyle/jquery.easy-pie-chart.js"></script>
+<script type="text/javascript" src="js/b_fontsize.js"></script>
+<link rel="stylesheet" type="text/css" href="huanstyle/jquery.easy-pie-chart.css" media="screen">
+<script>
+	function initPieChart(size){
+		$('.percentage').easyPieChart({
+			barColor:'#e83968',		//滚动条颜色
+			trackColor: '#dddddd',		//底色
+			scaleColor: false,		//分割线
+			lineWidth: 3,			//滚动条宽度
+			lineCap: 'butt',		//线条末端圆滑
+			size:size,
+			animate: 500			//动画时长
+		});
+	}
+	
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$zongkuan=$('.zonghe_score').css('width');
+	$zongkuan=$zongkuan.replace('px','')
+	$zongkuan=$zongkuan*0.25;
+	initPieChart(parseInt($zongkuan));
+	
+	
+	$('.sc_click').click(function(){
+	  $id=$(this).attr('data-id');
+	  $hoveClass=$(this).attr('class');
+	  if($hoveClass.indexOf('hover')>=0){
+		  $(this).addClass('sj_sc2').removeClass('sj_sc2_hover');
+		}else{
+			$(this).addClass('sj_sc2_hover').removeClass('sj_sc2');	
+		}
+	  
+	})
+})
+
+</script>
+<title>嗨美-Hi，beauty</title>
+</head>
+
+<body>
+<!--<div class="top_img">
+    <a href="javascript:history.back(-1)" class="sj_fh"></a>
+    <a class="sj_sc sc_click" data-id='123'></a>
+	<div class="sj_img_infor"><img src="images/test2.png" onclick="imgPreview('topimg1',0)" /></div>
+    <p class="zongzhang"><a href="javascript:imgPreview('topimg1',0)">10张</a><input type="hidden" value="http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/t1.png" class="topimg1" /></p>
+</div>-->
+<div class="sj_fh_sc2">
+	<a href="javascript:history.back(-1)" class="sj_fh2"></a>
+    <a class="sj_sc2 sc_click" data-id='123'></a>
+</div>
+<div class="liren_name_infor2">
+    <span class="liren_name2">优米造型美发店</span>
+    <span class="liren_ico color1">卡</span><!--平台已从此商家办理会员卡-->
+    <span class="liren_ico color2">保</span><!--保证无隐性消费，绝无推销-->
+    <span class="liren_ico color3">验</span><!--已通过平台验证，放心预约-->
+</div>
+<div class="pingfen2"><div class="pingfen_all2"><img src="images/damuzhi_bg.png"><p style="width:90%"></p></div><span class="weizhi_g3">4.6</span><span class="weizhi_g2">此卡已被预约使用3000次</span></div>
+<p class="line-h"></p>
+<div class="top_img" style=" padding:0.2rem 0">
+    <div class="card_name">上海有米造型</div>
+	<div class="vip_card"><img src="./images/vip_card.png" /></div>
+    <div class="card_no">NO.000123</div>
+</div>
+<p class="line-h"></p>
+<div class="zonghe_score">
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="33.3%" align="center">
+        <div class="percentage easyPieChart" data-percent="85" style="display:table-cell; vertical-align:middle"><p class="baifen_1">85%<br /><span class="baifen_2">环境</span></p></div>
+        </td>
+        <td width="33.3%" align="center">
+        <div class="percentage easyPieChart" data-percent="95" style="display:table-cell; vertical-align:middle"><p class="baifen_1">95%<br /><span class="baifen_2">服务</span></p></div>
+        </td>
+        <td width="33.3%" align="center">
+        <div class="percentage easyPieChart" data-percent="99" style="display:table-cell; vertical-align:middle"><p class="baifen_1">99%<br /><span class="baifen_2">质量</span></p></div>
+        </td>
+    </tr>
+</table>
+</div>
+<p class="line-h"></p>
+<div class="sj_address">
+<table cellpadding="0" cellspacing="0"><tr>
+<td class="sj_address_infor">上海市闸北区预警岗路360号</td>
+<td class="sj_address_sxl"></td>
+<td class="sj_address_sx"></td>
+<td class="sj_address_fenxiang" align="right"><img src="images/share.png" /></td>
+</tr>
+</table>
+</div>
+<p class="line-h"></p>
+<div class="sj_address">
+<table cellpadding="0" cellspacing="0"><tr>
+<td class="sj_address_gg">营业时间：【10:00-22:00】，<a href="javascript:imgPreview('topimg1',0)">图片：10张</a><br />公告：本店晚上十点暂停接受预约<input type="hidden" value="http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/t1.png" class="topimg1" /></td>
+</tr>
+</table>
+</div>
+<p class="line-h"></p>
+<div class="blank20"></div>
+<p class="beautiful_h2"><i></i>&nbsp;&nbsp;&nbsp;&nbsp;预约使用此卡可享受的服务：</p>
+<!--带图片和按钮样式开始-->
+<!--<div class="sj_tuijian">
+	<ul>
+    	<li>
+        	<a href="">
+            	<div class="sj_tuijian_img"><img src="images/test2.png" /></div>
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">总监洗剪吹套餐，双休通用</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥16</span><span class="tc_price_old">￥30</span><span class="tc_price_yishou">已售88</span></p>
+                </div>
+                <div class="sj_tuijian_an">购买</div>
+            </a>
+        </li>
+        <li>
+        	<a href="">
+            	<div class="sj_tuijian_img"><img src="images/test2.png" /></div>
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">15分钟速剪</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥19</span><span class="tc_price_old">￥30</span><span class="tc_price_yishou">已售88</span></p>
+                </div>
+                <div class="sj_tuijian_an">购买</div>
+            </a>
+        </li>
+        <li>
+        	<a href="">
+            	<div class="sj_tuijian_img"><img src="images/t1.png" /></div>
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">总监洗剪吹套餐</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥169</span><span class="tc_price_old">￥965</span><span class="tc_price_yishou">已售88</span></p>
+                </div>
+                <div class="sj_tuijian_an">购买</div>
+            </a>
+        </li>
+        <li>
+        	<a href="">
+            	<div class="sj_tuijian_img"><img src="images/test2.png" /></div>
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">15分钟速剪，双休通用</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥69</span><span class="tc_price_old">￥1</span><span class="tc_price_yishou">已售88</span></p>
+                </div>
+                <div class="sj_tuijian_an">购买</div>
+            </a>
+        </li>
+        <li>
+        	<a href="">
+            	<div class="sj_tuijian_img"><img src="images/t1.png" /></div>
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">洗剪吹</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥1</span><span class="tc_price_old">￥10</span><span class="tc_price_yishou">已售88</span></p>
+                </div>
+                <div class="sj_tuijian_an">购买</div>
+            </a>
+        </li>
+    </ul>
+</div>-->
+<!--带图片和按钮样式结束-->
+<!--不带图片和按钮样式开始-->
+<div class="sj_tuijian">
+	<ul>
+    	<li>
+        	<a href="tc_infor.html">
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">总监洗剪吹套餐，双休通用</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥16</span><span class="tc_price_old">￥30</span><span class="tc_price_yishou">已预约88次</span></p>
+                </div>
+                <div class="sj_tuijian_an"></div>
+            </a>
+        </li>
+        <li>
+        	<a href="tc_infor.html">
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">15分钟速剪</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥19</span><span class="tc_price_old">￥30</span><span class="tc_price_yishou">已预约88次</span></p>
+                </div>
+                <div class="sj_tuijian_an"></div>
+            </a>
+        </li>
+        <li>
+        	<a href="tc_infor.html">
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">总监洗剪吹套餐</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥169</span><span class="tc_price_old">￥965</span><span class="tc_price_yishou">已预约88次</span></p>
+                </div>
+                <div class="sj_tuijian_an"></div>
+            </a>
+        </li>
+        <li>
+        	<a href="tc_infor.html">
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">15分钟速剪，双休通用</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥69</span><span class="tc_price_old">￥1</span><span class="tc_price_yishou">已预约88次</span></p>
+                </div>
+                <div class="sj_tuijian_an"></div>
+            </a>
+        </li>
+        <li>
+        	<a href="tc_infor.html">
+            	<div class="sj_tuijian_tc">
+                	<p class="sj_tuijian_tc_name">洗剪吹</p>
+                    <p class="sj_tuijian_tc_price"><span class="tc_price_now">￥1</span><span class="tc_price_old">￥10</span><span class="tc_price_yishou">已预约88次</span></p>
+                </div>
+                <div class="sj_tuijian_an"></div>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--不带图片和按钮样式结束-->
+<div class="blank20"></div>
+<p class="beautiful_h2"><i></i>&nbsp;&nbsp;&nbsp;&nbsp;网友点评</p>
+<div class="dianping">
+	<ul>
+    	<li>
+        <div class="dianping_infor">
+        	<div class="dianping_touxiang"><img src="images/t1.png" /></div>
+            <div class="dianping_right">
+            	<p class="member_name">环境环境环境<span>2015-04-12 12:10:10</span></p>
+                <p class="member_score"><span>服务4.5分</span><span>环境4.5分</span><span>质量4.5分</span></p>
+                <p class="member_dianping_text">看朋友来做的不错推荐过来的！！提前预约的~~过来就做了！！！一对一服务很好！！！发型师很细心认真~~~头发做的也很满意~~第一次来这种模式的店~~全程无推荐无办</p>
+                <p class="member_dianping_img"><img src="images/t1.png" onclick="imgPreview('dp_img1',0)" /><img src="images/test2.png" onclick="imgPreview('dp_img1',1)"/><img src="images/t1.png" onclick="imgPreview('dp_img1',2)"/><img src="images/t1.png" onclick="imgPreview('dp_img1',3)"/><img src="images/t1.png" onclick="imgPreview('dp_img1',4)"/>
+                <input type="hidden" value="http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/t1.png,http://lonyv.com/Resource/wap/images/t1.png,http://lonyv.com/Resource/wap/images/t1.png" class="dp_img1" /></p>
+                 <p class="member_name2">"环境环境环境环境环境环境"</p>
+            </div>
+        </div>
+        </li>
+        <li>
+        <div class="dianping_infor">
+        	<div class="dianping_touxiang"><img src="images/t1.png" /></div>
+            <div class="dianping_right">
+            	<p class="member_name">环境环境环境<span>2015-04-12 12:10:10</span></p>
+                <p class="member_score"><span>服务4.5分</span><span>环境4.5分</span><span>质量4.5分</span></p>
+                <p class="member_dianping_text">来这里已经两次了，每次都很喜欢这里，来这里也很方便，今天还是那位师傅帮我 设计的头发，这让我很开心，因为我没有预约到他，所以内心感觉很不错，这次的效果也很好，在中图服务有按摩还有水果，很不错的，给个赞，喜欢的可以过来</p>
+                <p class="member_dianping_img"><img src="images/t1.png" onclick="imgPreview('dp_img2',0)" /><img src="images/test2.png" onclick="imgPreview('dp_img2',1)"/><img src="images/t1.png" onclick="imgPreview('dp_img1',2)"/>
+                <input type="hidden" value="http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/t1.png" class="dp_img2" /></p>
+                <p class="member_name2">"环境环境环境环境环境环境"</p>
+            </div>
+        </div>
+        </li>
+        <li>
+        <div class="dianping_infor">
+        	<div class="dianping_touxiang"><img src="images/t1.png" /></div>
+            <div class="dianping_right">
+            	<p class="member_name">环境环境环境<span>2015-04-12 12:10:10</span></p>
+                <p class="member_score"><span>服务4.5分</span><span>环境4.5分</span><span>质量4.5分</span></p>
+                <p class="member_dianping_text">昨天预约来这里烫头发，今天很早就过来了，我是浦东的，上次一个同事过来了，做的非常好，让我也来感受，接待我的是啊坤老师，人非常不错，很热情，开始端茶倒水的，还有水果，我还以为收费，事实都是给我吃的，而且我中午没吃饭，还给我那个吃的，很棒，技术不用说了，非常过关，头发烫的很自然，没有我想象的那么死板，我看算日式的吧，不过我很喜欢，辛苦阿坤老师了，阿坤老师你棒棒的</p>
+                <p class="member_name2">"环境环境环境环境环境环境"</p>
+            </div>
+        </div>
+        </li>
+    </ul>
+	<p class="beautiful_h2_3"><a href="dianping.html">查看全部3878条评论&nbsp;&nbsp;></a></p>
+</div>
+
+<div class="back_top"><a></a></div>
+<script>
+function imgPreview($allimg,$nowimgid){
+	$imgs=$('.'+$allimg).val();
+	$imgs=$imgs.split(',');
+	$nowImgurl=$imgs[$nowimgid];
+	WeixinJSBridge.invoke("imagePreview",{
+		"urls":$imgs,
+		"current":$nowImgurl
+	})
+}
+</script>
+
+</body>
+</html>

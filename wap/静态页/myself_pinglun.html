@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="css/under.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/b_fontsize.js"></script>
+<title>嗨美-Hi，beauty</title>
+</head>
+
+<body>
+<header class="topnav">
+    <a href="javascript:history.back(-1)" class="back_tc_infor"></a>
+    <a class="order_infor_text">我的评论</a>
+    <a href="myself_yuyue.html" class="back_tc_infor3"><span>1</span></a>
+</header>
+
+<div class="dianping">
+	<ul>
+    	<li>
+        <p class="member_name">环境环境环境</p>
+        <div class="dianping_infor">
+            <div class="dianping_right">
+                <p class="member_score"><span>服务4.5分</span><span>环境4.5分</span><span>质量4.5分</span></p>
+                <p class="member_dianping_text">看朋友来做的不错推荐过来的！！提前预约的~~过来就做了！！！一对一服务很好！！！发型师很细心认真~~~头发做的也很满意~~第一次来这种模式的店~~全程无推荐无办</p>
+                <p class="member_dianping_img2"><img src="images/t1.png" onclick="imgPreview('dp_img1',0)" /><img src="images/test2.png" onclick="imgPreview('dp_img1',1)"/><img src="images/t1.png" onclick="imgPreview('dp_img1',2)"/><img src="images/t1.png" onclick="imgPreview('dp_img1',3)"/><img src="images/t1.png" onclick="imgPreview('dp_img1',4)"/>
+                <input type="hidden" value="http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/t1.png,http://lonyv.com/Resource/wap/images/t1.png,http://lonyv.com/Resource/wap/images/t1.png" class="dp_img1" /></p>
+            </div>
+        </div>
+        <p class="member_name2">“环境环境环境”<span>2015-04-12 12:10</span></p>
+        <div class="bottom_line"></div>
+        </li>
+        <li>
+        <p class="member_name">环境环境环境</p>
+        <div class="dianping_infor">
+            <div class="dianping_right">
+                <p class="member_score"><span>服务4.5分</span><span>环境4.5分</span><span>质量4.5分</span></p>
+                <p class="member_dianping_text">来这里已经两次了，每次都很喜欢这里，来这里也很方便，今天还是那位师傅帮我 设计的头发，这让我很开心，因为我没有预约到他，所以内心感觉很不错，这次的效果也很好，在中图服务有按摩还有水果，很不错的，给个赞，喜欢的可以过来</p>
+                <p class="member_dianping_img2"><img src="images/t1.png" onclick="imgPreview('dp_img2',0)" /><img src="images/test2.png" onclick="imgPreview('dp_img2',1)"/><img src="images/t1.png" onclick="imgPreview('dp_img1',2)"/>
+                <input type="hidden" value="http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/test2.png,http://lonyv.com/Resource/wap/images/t1.png" class="dp_img2" /></p>
+            </div>
+        </div>
+        <p class="member_name2">“环境环境环境”<span>2015-04-12 12:10</span></p>
+        <div class="bottom_line"></div>
+        </li>
+        <li>
+        <p class="member_name">环境环境环境</p>
+        <div class="dianping_infor">
+            <div class="dianping_right">
+                <p class="member_score"><span>服务4.5分</span><span>环境4.5分</span><span>质量4.5分</span></p>
+                <p class="member_dianping_text">昨天预约来这里烫头发，今天很早就过来了，我是浦东的，上次一个同事过来了，做的非常好，让我也来感受，接待我的是啊坤老师，人非常不错，很热情，开始端茶倒水的，还有水果，我还以为收费，事实都是给我吃的，而且我中午没吃饭，还给我那个吃的，很棒，技术不用说了，非常过关，头发烫的很自然，没有我想象的那么死板，我看算日式的吧，不过我很喜欢，辛苦阿坤老师了，阿坤老师你棒棒的</p>
+            </div>
+        </div>
+        <p class="member_name2">“环境环境环境”<span>2015-04-12 12:10</span></p>
+        <div class="bottom_line"></div>
+        </li>
+    </ul>
+</div>
+<div class="back_top"><a></a></div>
+<script>
+function imgPreview($allimg,$nowimgid){
+	$imgs=$('.'+$allimg).val();
+	$imgs=$imgs.split(',');
+	$nowImgurl=$imgs[$nowimgid];
+	WeixinJSBridge.invoke("imagePreview",{
+		"urls":$imgs,
+		"current":$nowImgurl
+	})
+}
+</script>
+
+</body>
+</html>

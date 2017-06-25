@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/b_fontsize2.js"></script>
+<script type="text/javascript" src="js/touch_lrtb.js"></script>
+<style>
+a{ outline:none}
+</style>
+<title>嗨美-Hi，beauty</title>
+</head>
+
+<body style="background-image:url(./images/main_bg.png); background-size:120%;">
+<div class="yuan_xu_wai">
+	<a href="#" class="tang_index2"><span>烫</span></a>
+    <a href="#" class="xi_index2"><span>洗</span></a>
+    <a href="#" class="jian_index2"><span>剪</span></a>
+    <a href="#" class="hu_index2"><span>护</span></a>
+    <a href="#" class="tao_index2"><span>套</span></a>
+    <a href="#" class="ran_index2"><span>染</span></a>
+    <a href="#" class="fujin_index2" id="fujin_block"><span>附近</span></a>
+</div>
+<footer>
+    <p><a class="go_youhui" href="go.html"></a></p>
+</footer>
+
+<script>
+	$(function(){
+		$('.tang_index2').animate({'left':'0','top':'2rem'},500,function(){$(this).find('span').show();});
+		$('.xi_index2').animate({'left':'1.16rem','top':'0'},500,function(){$(this).find('span').show();});
+		$('.jian_index2').animate({'left':'3.5rem','top':'0'},500,function(){$(this).find('span').show();});
+		$('.hu_index2').animate({'left':'4.7rem','top':'2rem'},500,function(){$(this).find('span').show();});
+		$('.tao_index2').animate({'left':'3.5rem','top':'4rem'},500,function(){$(this).find('span').show();});
+		$('.ran_index2').animate({'left':'1.16rem','top':'4rem'},500,function(){$(this).find('span').show();});
+		
+		$('.yuan_xu_wai').touchwipe({wipeLeft:function(){
+				$('.yuan_xu_wai').addClass('ling_xiank_left');	
+			},wipeRight:function(){
+				$('.yuan_xu_wai').addClass('ling_xiank_right');
+			},wipeUp:function(){
+				$('.yuan_xu_wai').addClass('ling_xiank_up');
+			},wipeDown:function(){
+				$('.yuan_xu_wai').addClass('ling_xiank_down');
+			}
+		})
+		$(".yuan_xu_wai").on("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
+			$('.yuan_xu_wai').removeClass('ling_xiank_left ling_xiank_right ling_xiank_up ling_xiank_down');
+		});  
+	})
+</script>
+</body>
+</html>
